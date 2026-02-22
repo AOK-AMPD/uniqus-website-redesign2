@@ -51,22 +51,41 @@
         <section id="hero" class="hero section-padding">
             <div class="container hero-container">
                 <div class="hero-content">
-                    <h1 class="hero-title">Change the way <span class="text-gradient">consulting</span> is done</h1>
-                    <p class="hero-subtitle">Bridging the rigor of Big 4 consulting with the agility of a global tech
+                    <h1 class="hero-title" id="typing-tagline"><span class="tagline-hidden">-----------------</span>
+                    </h1>
+                    <p class="hero-subtitle tagline-hidden" id="hero-subtitle">Bridging the rigor of Big 4 consulting
+                        with the agility of a global tech
                         startup. We deliver tech-enabled solutions across national borders.</p>
-                    <div class="hero-cta">
+                    <div class="hero-cta tagline-hidden" id="hero-cta">
                         <a href="#services" class="btn btn-primary">Explore Services</a>
                         <a href="#founders" class="btn btn-secondary">Learn Why</a>
                     </div>
                 </div>
-                <div class="hero-visuals">
-                    <div class="glass-orb orb-1"></div>
-                    <div class="glass-orb orb-2"></div>
-                    <!-- Abstract UI cards representing their tech-forward approach -->
-                    <div class="glass-card card-arc">ARC</div>
-                    <div class="glass-card card-grc">GRC</div>
-                    <div class="glass-card card-scc">SCC</div>
-                    <div class="glass-card card-tech">TECH</div>
+                <div class="hero-visuals lego-hero-board">
+                    <div class="instruction-text" id="hero-instruction">↗ Assemble the pieces to begin</div>
+                    <button class="lego-reset-btn" id="hero-reset-btn">Reset</button>
+
+                    <div class="lego-grid-target" id="lego-grid-target">
+                        <div class="lego-slot" data-slot="arc"></div>
+                        <div class="lego-slot" data-slot="grc"></div>
+                        <div class="lego-slot" data-slot="scc"></div>
+                        <div class="lego-slot" data-slot="tech"></div>
+                    </div>
+
+                    <div class="hero-floating-cards" id="hero-scatter-container">
+                        <div class="lego-brick-draggable" data-service="arc" id="hero-brick-arc">
+                            <h3>ARC</h3>
+                        </div>
+                        <div class="lego-brick-draggable" data-service="grc" id="hero-brick-grc">
+                            <h3>GRC</h3>
+                        </div>
+                        <div class="lego-brick-draggable" data-service="scc" id="hero-brick-scc">
+                            <h3>SCC</h3>
+                        </div>
+                        <div class="lego-brick-draggable" data-service="tech" id="hero-brick-tech">
+                            <h3>TECH</h3>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -74,26 +93,50 @@
         <!-- Stats Section -->
         <section id="stats" class="stats section-padding">
             <div class="container">
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <h3 class="stat-number">80+</h3>
-                        <p class="stat-label">Partners & Directors</p>
+                <div class="stats-lego-stack" id="stats-lego-stack">
+                    <div class="stat-brick type-a" data-target="80" data-delay="0">
+                        <span class="brick-studs"></span>
+                        <div class="stat-content">
+                            <h3><span class="count-up">0</span>+</h3>
+                            <p>Partners & Directors</p>
+                        </div>
+                        <div class="brick-ridge"></div>
                     </div>
-                    <div class="stat-card">
-                        <h3 class="stat-number">700+</h3>
-                        <p class="stat-label">Global Professionals</p>
+
+                    <div class="stat-brick type-b" data-target="700" data-delay="200">
+                        <span class="brick-studs"></span>
+                        <div class="stat-content">
+                            <h3><span class="count-up">0</span>+</h3>
+                            <p>Global Professionals</p>
+                        </div>
+                        <div class="brick-ridge"></div>
                     </div>
-                    <div class="stat-card">
-                        <h3 class="stat-number">11</h3>
-                        <p class="stat-label">Global Offices</p>
+
+                    <div class="stat-brick type-a" data-target="11" data-delay="400">
+                        <span class="brick-studs"></span>
+                        <div class="stat-content">
+                            <h3><span class="count-up">0</span></h3>
+                            <p>Global Offices</p>
+                        </div>
+                        <div class="brick-ridge"></div>
                     </div>
-                    <div class="stat-card">
-                        <h3 class="stat-number">400+</h3>
-                        <p class="stat-label">Clients Worldwide</p>
+
+                    <div class="stat-brick type-b" data-target="400" data-delay="600">
+                        <span class="brick-studs"></span>
+                        <div class="stat-content">
+                            <h3><span class="count-up">0</span>+</h3>
+                            <p>Clients Worldwide</p>
+                        </div>
+                        <div class="brick-ridge"></div>
                     </div>
-                    <div class="stat-card">
-                        <h3 class="stat-number" style="font-size: 2.5rem;">$250 Million</h3>
-                        <p class="stat-label">Valuation</p>
+
+                    <div class="stat-brick type-a" data-target="250" data-delay="800">
+                        <span class="brick-studs"></span>
+                        <div class="stat-content" style="padding-bottom: 2rem;">
+                            <h3>$<span class="count-up">0</span>M</h3>
+                            <p>Valuation</p>
+                        </div>
+                        <!-- Bottom brick doesn't need a ridge -->
                     </div>
                 </div>
 
@@ -129,69 +172,82 @@
                     <h2 class="section-title" style="text-align: center;">Why <span class="text-gradient">Uniqus</span>
                     </h2>
 
-                    <ul class="feature-list" style="margin-top: 2rem;">
-                        <li style="margin-bottom: 1.5rem;">
-                            <div class="feature-icon" style="font-size: 1.8rem;">🎯</div>
-                            <div class="feature-text">
+                    <div class="why-boxes-container"
+                        style="margin-top: 2rem; display: flex; flex-direction: column; gap: 1rem;">
+                        <div class="why-box active">
+                            <div class="why-box-header">
+                                <span class="feature-icon" style="font-size: 1.8rem;">🎯</span>
                                 <h4
-                                    style="margin-bottom: 0.5rem; font-size: 1.2rem; color: var(--color-primary-light);">
+                                    style="margin: 0; font-size: 1.2rem; color: var(--color-primary-light); flex-grow: 1;">
                                     Our Leadership & Deep Expertise</h4>
+                                <span class="btn-toggle-box">−</span>
+                            </div>
+                            <div class="why-box-content">
                                 <p style="font-size: 0.95rem; color: var(--color-text-secondary); line-height: 1.6;">Our
                                     co-founders and 75+ global leaders bring 25+ years of experience from Big 4 firms to
                                     guide your finance transformation.</p>
                             </div>
-                        </li>
-                        <li style="margin-bottom: 1.5rem;">
-                            <div class="feature-icon" style="font-size: 1.8rem;">🌍</div>
-                            <div class="feature-text">
+                        </div>
+                        <div class="why-box">
+                            <div class="why-box-header">
+                                <span class="feature-icon" style="font-size: 1.8rem;">🌍</span>
                                 <h4
-                                    style="margin-bottom: 0.5rem; font-size: 1.2rem; color: var(--color-primary-light);">
+                                    style="margin: 0; font-size: 1.2rem; color: var(--color-primary-light); flex-grow: 1;">
                                     World-Class Talent, Globally Delivered</h4>
-                                <p style="font-size: 0.95rem; color: var(--color-text-secondary); line-height: 1.6;">Our
-                                    integrated talent pool draws from Big 4
-                                    accounting, finance transformation, risk, and technology practices across the USA,
-                                    India, and the Middle East — delivering premium expertise at the right price point.
-                                </p>
+                                <span class="btn-toggle-box">+</span>
                             </div>
-                        </li>
-                        <li style="margin-bottom: 1.5rem;">
-                            <div class="feature-icon" style="font-size: 1.8rem;">⚡</div>
-                            <div class="feature-text">
+                            <div class="why-box-content">
+                                <p style="font-size: 0.95rem; color: var(--color-text-secondary); line-height: 1.6;">Our
+                                    integrated talent pool draws from Big 4 accounting, finance transformation, risk,
+                                    and technology practices across the USA, India, and the Middle East — delivering
+                                    premium expertise at the right price point.</p>
+                            </div>
+                        </div>
+                        <div class="why-box">
+                            <div class="why-box-header">
+                                <span class="feature-icon" style="font-size: 1.8rem;">⚡</span>
                                 <h4
-                                    style="margin-bottom: 0.5rem; font-size: 1.2rem; color: var(--color-primary-light);">
+                                    style="margin: 0; font-size: 1.2rem; color: var(--color-primary-light); flex-grow: 1;">
                                     Agility & Responsiveness</h4>
+                                <span class="btn-toggle-box">+</span>
+                            </div>
+                            <div class="why-box-content">
                                 <p style="font-size: 0.95rem; color: var(--color-text-secondary); line-height: 1.6;">
                                     Free from auditor independence requirements, we support clients without friction,
                                     driven by high partner involvement.</p>
                             </div>
-                        </li>
-                        <li style="margin-bottom: 1.5rem;">
-                            <div class="feature-icon" style="font-size: 1.8rem;">💻</div>
-                            <div class="feature-text">
+                        </div>
+                        <div class="why-box">
+                            <div class="why-box-header">
+                                <span class="feature-icon" style="font-size: 1.8rem;">💻</span>
                                 <h4
-                                    style="margin-bottom: 0.5rem; font-size: 1.2rem; color: var(--color-primary-light);">
+                                    style="margin: 0; font-size: 1.2rem; color: var(--color-primary-light); flex-grow: 1;">
                                     Technology-led approach</h4>
-                                <p style="font-size: 0.95rem; color: var(--color-text-secondary); line-height: 1.6;">
-                                    We go beyond strategy. With proprietary tech products and partnerships with leading
-                                    platforms, we implement end-to-end
-                                    solutions that automate, integrate, and streamline your finance function from day
-                                    one.</p>
+                                <span class="btn-toggle-box">+</span>
                             </div>
-                        </li>
-                        <li style="margin-bottom: 1.5rem;">
-                            <div class="feature-icon" style="font-size: 1.8rem;">🤖</div>
-                            <div class="feature-text">
+                            <div class="why-box-content">
+                                <p style="font-size: 0.95rem; color: var(--color-text-secondary); line-height: 1.6;">We
+                                    go beyond strategy. With proprietary tech products and partnerships with leading
+                                    platforms, we implement end-to-end solutions that automate, integrate, and
+                                    streamline your finance function from day one.</p>
+                            </div>
+                        </div>
+                        <div class="why-box">
+                            <div class="why-box-header">
+                                <span class="feature-icon" style="font-size: 1.8rem;">🤖</span>
                                 <h4
-                                    style="margin-bottom: 0.5rem; font-size: 1.2rem; color: var(--color-primary-light);">
+                                    style="margin: 0; font-size: 1.2rem; color: var(--color-primary-light); flex-grow: 1;">
                                     Our AI-led Platforms</h4>
-                                <p style="font-size: 0.95rem; color: var(--color-text-secondary); line-height: 1.6;">
-                                    Our AI platforms automate accounting research, extract authoritative literature,
-                                    perform complex calculations,
-                                    and produce audit-ready outputs — bringing consistency, control, and speed to your
-                                    most demanding workflows.</p>
+                                <span class="btn-toggle-box">+</span>
                             </div>
-                        </li>
-                    </ul>
+                            <div class="why-box-content">
+                                <p style="font-size: 0.95rem; color: var(--color-text-secondary); line-height: 1.6;">Our
+                                    AI platforms automate accounting research, extract authoritative literature, perform
+                                    complex calculations, and produce audit-ready outputs — bringing consistency,
+                                    control, and speed to your most demanding workflows.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="why-visual">
                     <div class="glass-card"
@@ -288,34 +344,155 @@
                         modern business challenges.</p>
                 </div>
 
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="service-icon">📊</div>
-                        <h3>ARC</h3>
-                        <p class="service-desc">Accounting & Reporting Consulting. Expert guidance on technical
-                            accounting, IPO advisory, finance transformation, and digitizing the finance function.</p>
-                        <a href="#contact" class="service-link">Learn more &rarr;</a>
+                <div class="services-builder-container">
+                    <div class="base-plate-tabs">
+                        <button class="plate-tab active" data-plate="arc">ARC</button>
+                        <button class="plate-tab" data-plate="grc">GRC</button>
+                        <button class="plate-tab" data-plate="scc">SCC</button>
+                        <button class="plate-tab" data-plate="tech">TECH</button>
                     </div>
-                    <div class="service-card">
-                        <div class="service-icon">🛡️</div>
-                        <h3>GRC</h3>
-                        <p class="service-desc">Governance, Risk & Compliance. Strengthening internal controls,
-                            enterprise risk management, SOX compliance, and deploying GRC automation platforms.</p>
-                        <a href="#contact" class="service-link">Learn more &rarr;</a>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">🌱</div>
-                        <h3>SCC</h3>
-                        <p class="service-desc">Sustainability & Climate Consulting. ESG strategy & advisory, climate
-                            action planning, corporate sustainability reporting, and ESG diligence.</p>
-                        <a href="#contact" class="service-link">Learn more &rarr;</a>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">💻</div>
-                        <h3>Tech Consulting</h3>
-                        <p class="service-desc">Solving business problems holistically by integrating advanced AI
-                            knowledge, GenAI adoption management, and AI-driven GRC automation.</p>
-                        <a href="#contact" class="service-link">Learn more &rarr;</a>
+
+                    <div class="base-plate-board" id="base-plate-board">
+
+                        <div class="plate-content active" id="plate-arc">
+                            <div class="sub-service-brick animate-fly-in" style="--delay: 1;"
+                                data-title="Technical Accounting" data-desc="Complex standards & IPO advisory">
+                                <span class="brick-studs"></span>
+                                <h5>Technical Accounting</h5>
+                                <p>Complex standards & IPO advisory</p>
+                            </div>
+                            <div class="sub-service-brick animate-fly-in" style="--delay: 2;"
+                                data-title="Finance Transformation" data-desc="Digitizing finance for scale">
+                                <span class="brick-studs"></span>
+                                <h5>Finance Transformation</h5>
+                                <p>Digitizing finance for scale</p>
+                            </div>
+                            <div class="sub-service-brick animate-fly-in" style="--delay: 3;" data-title="ICFR"
+                                data-desc="Internal controls over financial reporting">
+                                <span class="brick-studs"></span>
+                                <h5>ICFR</h5>
+                                <p>Internal controls over financial reporting</p>
+                            </div>
+                            <div class="sub-service-brick animate-fly-in" style="--delay: 4;" data-title="Audit Support"
+                                data-desc="Financial statement preparation">
+                                <span class="brick-studs"></span>
+                                <h5>Audit Support</h5>
+                                <p>Financial statement preparation</p>
+                            </div>
+                            <div class="sub-service-brick animate-fly-in" style="--delay: 5;" data-title="Stock Options"
+                                data-desc="Equity accounting & compliance">
+                                <span class="brick-studs"></span>
+                                <h5>Stock Options</h5>
+                                <p>Equity accounting & compliance</p>
+                            </div>
+                        </div>
+
+                        <div class="plate-content" id="plate-grc">
+                            <div class="sub-service-brick" style="--delay: 1;" data-title="Enterprise Risk"
+                                data-desc="Proactive risk identification & management">
+                                <span class="brick-studs"></span>
+                                <h5>Enterprise Risk</h5>
+                                <p>Proactive risk identification & management</p>
+                            </div>
+                            <div class="sub-service-brick" style="--delay: 2;" data-title="SOX Compliance"
+                                data-desc="End-to-end SOX testing & documentation">
+                                <span class="brick-studs"></span>
+                                <h5>SOX Compliance</h5>
+                                <p>End-to-end SOX testing & documentation</p>
+                            </div>
+                            <div class="sub-service-brick" style="--delay: 3;" data-title="Corporate Governance"
+                                data-desc="Board-level governance frameworks">
+                                <span class="brick-studs"></span>
+                                <h5>Corporate Governance</h5>
+                                <p>Board-level governance frameworks</p>
+                            </div>
+                            <div class="sub-service-brick" style="--delay: 4;" data-title="Organizational Resilience"
+                                data-desc="Business continuity planning">
+                                <span class="brick-studs"></span>
+                                <h5>Organizational Resilience</h5>
+                                <p>Business continuity planning</p>
+                            </div>
+                            <div class="sub-service-brick" style="--delay: 5;" data-title="GRC Digitization"
+                                data-desc="Automated compliance via Risk UniVerse">
+                                <span class="brick-studs"></span>
+                                <h5>GRC Digitization</h5>
+                                <p>Automated compliance via Risk UniVerse</p>
+                            </div>
+                        </div>
+
+                        <div class="plate-content" id="plate-scc">
+                            <div class="sub-service-brick" style="--delay: 1;" data-title="ESG Strategy"
+                                data-desc="Materiality assessment & roadmap">
+                                <span class="brick-studs"></span>
+                                <h5>ESG Strategy</h5>
+                                <p>Materiality assessment & roadmap</p>
+                            </div>
+                            <div class="sub-service-brick" style="--delay: 2;" data-title="Climate Action"
+                                data-desc="Decarbonization & net-zero planning">
+                                <span class="brick-studs"></span>
+                                <h5>Climate Action</h5>
+                                <p>Decarbonization & net-zero planning</p>
+                            </div>
+                            <div class="sub-service-brick" style="--delay: 3;" data-title="ESG Reporting"
+                                data-desc="GRI, ISSB, CSRD, TCFD, BRSR frameworks">
+                                <span class="brick-studs"></span>
+                                <h5>ESG Reporting</h5>
+                                <p>GRI, ISSB, CSRD, TCFD, BRSR frameworks</p>
+                            </div>
+                            <div class="sub-service-brick" style="--delay: 4;" data-title="Sustainable Finance"
+                                data-desc="Green financing advisory">
+                                <span class="brick-studs"></span>
+                                <h5>Sustainable Finance</h5>
+                                <p>Green financing advisory</p>
+                            </div>
+                            <div class="sub-service-brick" style="--delay: 5;" data-title="ESG Training"
+                                data-desc="Team capability building programs">
+                                <span class="brick-studs"></span>
+                                <h5>ESG Training</h5>
+                                <p>Team capability building programs</p>
+                            </div>
+                        </div>
+
+                        <div class="plate-content" id="plate-tech">
+                            <div class="sub-service-brick" style="--delay: 1;" data-title="GenAI Adoption"
+                                data-desc="Enterprise AI governance & oversight">
+                                <span class="brick-studs"></span>
+                                <h5>GenAI Adoption</h5>
+                                <p>Enterprise AI governance & oversight</p>
+                            </div>
+                            <div class="sub-service-brick" style="--delay: 2;" data-title="Finance Automation"
+                                data-desc="Month-end close & reconciliation AI">
+                                <span class="brick-studs"></span>
+                                <h5>Finance Automation</h5>
+                                <p>Month-end close & reconciliation AI</p>
+                            </div>
+                            <div class="sub-service-brick" style="--delay: 3;" data-title="Lease Accounting"
+                                data-desc="ASC 842 / IFRS 16 automation">
+                                <span class="brick-studs"></span>
+                                <h5>Lease Accounting</h5>
+                                <p>ASC 842 / IFRS 16 automation</p>
+                            </div>
+                            <div class="sub-service-brick" style="--delay: 4;" data-title="GRC Automation"
+                                data-desc="Real-time risk & compliance platforms">
+                                <span class="brick-studs"></span>
+                                <h5>GRC Automation</h5>
+                                <p>Real-time risk & compliance platforms</p>
+                            </div>
+                            <div class="sub-service-brick" style="--delay: 5;" data-title="Spend Management"
+                                data-desc="Procurement & accounting integration">
+                                <span class="brick-studs"></span>
+                                <h5>Spend Management</h5>
+                                <p>Procurement & accounting integration</p>
+                            </div>
+                        </div>
+
+                        <!-- Expand detail panel -->
+                        <div class="brick-detail-panel" id="brick-detail-panel">
+                            <h4 id="detail-title">Select a brick</h4>
+                            <p id="detail-desc">Click on any module above to learn more.</p>
+                            <a href="#contact" class="btn btn-primary"
+                                style="padding: 6px 14px; font-size: 0.85rem; margin-top: 10px;">Learn More</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -330,106 +507,88 @@
                         consulting capabilities.</p>
                 </div>
 
-                <div class="products-interactive-container">
-                    <div class="products-sidebar"
-                        style="position: relative; padding-left: 30px; display: flex; flex-direction: column; justify-content: space-between; padding-top: 1rem; padding-bottom: 1rem;">
-                        <!-- Vertical Timeline Bar spanning exact height of tabs -->
-                        <div
-                            style="position: absolute; left: 15px; top: 2.22rem; bottom: 2.38rem; width: 4px; background: rgba(255,255,255,0.05); border-radius: 2px;">
+                <div class="products-crate-grid">
+                    <!-- UniQuest -->
+                    <div class="product-crate" data-product="uniquest">
+                        <div class="crate-lid">
+                            <h3><span class="text-gradient">UniQuest</span></h3>
+                            <span class="lock-icon">🔒</span>
+                            <p class="teaser-text">AI-powered research co-pilot</p>
+                            <span class="unlock-hint"><i>Click to pry open</i></span>
                         </div>
-                        <!-- Vertical Progress Indicator -->
-                        <div id="product-timeline-progress"
-                            style="position: absolute; left: 15px; top: 2.22rem; height: calc((100% - 4.6rem) / 3); width: 4px; background: var(--gradient-brand); border-radius: 2px; transition: top 0.4s ease-in-out;">
-                        </div>
-
-                        <div class="product-tab active" data-product="uniquest" data-index="0"
-                            style="padding: 1.5rem 0; border: none; background: transparent;">
-                            <h3>UniQuest</h3>
-                        </div>
-                        <div class="product-tab" data-product="risk" data-index="1"
-                            style="padding: 1.5rem 0; border: none; background: transparent;">
-                            <h3>Risk UniVerse</h3>
-                        </div>
-                        <div class="product-tab" data-product="reporting" data-index="2"
-                            style="padding: 1.5rem 0; border: none; background: transparent;">
-                            <h3>Reporting UniVerse</h3>
-                        </div>
-                        <div class="product-tab" data-product="esg" data-index="3"
-                            style="padding: 1.5rem 0; border: none; background: transparent;">
-                            <h3>ESG UniVerse</h3>
+                        <div class="crate-contents">
+                            <h3><span class="text-gradient">UniQuest</span></h3>
+                            <p class="full-desc">Web-based GenAI platform for finance and sustainability executives to
+                                perform research and manage knowledge.</p>
+                            <ul class="feature-checklist">
+                                <li><span>✓</span> NLP-based smart insights and reference validations</li>
+                                <li><span>✓</span> Query complex documents into concise synopses</li>
+                                <li><span>✓</span> Competitive intelligence via peer SEC filings</li>
+                            </ul>
+                            <a href="#contact" class="btn-learn-more">Learn More &rarr;</a>
                         </div>
                     </div>
 
-                    <div class="products-display">
-                        <div class="product-pane active" id="pane-uniquest" style="padding: 0.5rem 0.5rem">
-                            <div class="pane-content">
-                                <h3>Web-based AI-powered research</h3>
-                                <p>Designed to revolutionize how finance and sustainability executives perform research
-                                    and manage knowledge on ESG and financial reporting matters acting as a co-pilot.
-                                </p>
-                                <ul style="margin-top:1rem;color:var(--color-text-secondary);line-height:1.8;">
-                                    <li>✓ NLP-based smart insights and reference validations</li>
-                                    <li>✓ Query complex documents to create concise synopses</li>
-                                    <li>✓ Facilitates competitive intelligence via SEC filings</li>
-                                </ul>
-                            </div>
-                            <div class="pane-visual"
-                                style="background:linear-gradient(135deg, rgba(88,16,160,0.2), transparent);">
-                                <div style="font-size: 4rem;opacity:0.8;">🧠</div>
-                            </div>
+                    <!-- Risk UniVerse -->
+                    <div class="product-crate" data-product="risk">
+                        <div class="crate-lid">
+                            <h3><span class="text-gradient">Risk UniVerse</span></h3>
+                            <span class="lock-icon">🔒</span>
+                            <p class="teaser-text">Enterprise financial control platform</p>
+                            <span class="unlock-hint"><i>Click to pry open</i></span>
                         </div>
-
-                        <div class="product-pane" id="pane-risk" style="padding: 0.5rem 0.5rem">
-                            <div class="pane-content">
-                                <h3>Enterprise Financial Control</h3>
-                                <p>A proprietary platform designed specifically to streamline internal controls over
-                                    financial reporting, SOX compliance, and internal financial controls.</p>
-                                <ul style="margin-top:1rem;color:var(--color-text-secondary);line-height:1.8;">
-                                    <li>✓ Automated Controls Testing</li>
-                                    <li>✓ Real-time Risk Dashboards</li>
-                                    <li>✓ Data integrity and robust compliance</li>
-                                </ul>
-                            </div>
-                            <div class="pane-visual"
-                                style="background:linear-gradient(135deg, rgba(255,42,133,0.2), transparent);">
-                                <div style="font-size: 4rem;opacity:0.8;">🛡️</div>
-                            </div>
+                        <div class="crate-contents">
+                            <h3><span class="text-gradient">Risk UniVerse</span></h3>
+                            <p class="full-desc">Proprietary platform streamlining internal controls, SOX compliance,
+                                and financial reporting.</p>
+                            <ul class="feature-checklist">
+                                <li><span>✓</span> Automated controls testing</li>
+                                <li><span>✓</span> Real-time risk dashboards</li>
+                                <li><span>✓</span> Robust data integrity and compliance</li>
+                            </ul>
+                            <a href="#contact" class="btn-learn-more">Learn More &rarr;</a>
                         </div>
+                    </div>
 
-                        <div class="product-pane" id="pane-reporting" style="padding: 0.5rem 0.5rem">
-                            <div class="pane-content">
-                                <h3>Advanced Data Management</h3>
-                                <p>A cloud-based solution that automates the creation of Board-ready financial
-                                    statements and annual reports, streamlining the reporting process for global
-                                    enterprises.</p>
-                                <ul style="margin-top:1rem;color:var(--color-text-secondary);line-height:1.8;">
-                                    <li>✓ Automated Board-ready reports</li>
-                                    <li>✓ Single-source-of-truth accuracy</li>
-                                    <li>✓ Narrative Reporting Integration</li>
-                                </ul>
-                            </div>
-                            <div class="pane-visual"
-                                style="background:linear-gradient(135deg, rgba(138,43,226,0.2), transparent);">
-                                <div style="font-size: 4rem;opacity:0.8;">📊</div>
-                            </div>
+                    <!-- Reporting UniVerse -->
+                    <div class="product-crate" data-product="reporting">
+                        <div class="crate-lid">
+                            <h3><span class="text-gradient">Reporting <br> UniVerse</span></h3>
+                            <span class="lock-icon">🔒</span>
+                            <p class="teaser-text">Cloud financial reporting</p>
+                            <span class="unlock-hint"><i>Click to pry open</i></span>
                         </div>
+                        <div class="crate-contents">
+                            <h3><span class="text-gradient">Reporting UniVerse</span></h3>
+                            <p class="full-desc">Cloud solution automating board-ready financial statements and annual
+                                reports.</p>
+                            <ul class="feature-checklist">
+                                <li><span>✓</span> Automated financial close workflows</li>
+                                <li><span>✓</span> Board-ready report generation</li>
+                                <li><span>✓</span> Deep ERP integration</li>
+                            </ul>
+                            <a href="#contact" class="btn-learn-more">Learn More &rarr;</a>
+                        </div>
+                    </div>
 
-                        <div class="product-pane" id="pane-esg" style="padding: 0.5rem 0.5rem">
-                            <div class="pane-content">
-                                <h3>Sustainability Measurement</h3>
-                                <p>A cloud-based solution empowering organizations to navigate their sustainability
-                                    journey, covering ESG disclosures, greenhouse gas accounting, and value chain
-                                    assessment.</p>
-                                <ul style="margin-top:1rem;color:var(--color-text-secondary);line-height:1.8;">
-                                    <li>✓ Carbon Footprint Tracking across Value Chain</li>
-                                    <li>✓ OCR and data automation tools</li>
-                                    <li>✓ Strategic sustainability alignment insights</li>
-                                </ul>
-                            </div>
-                            <div class="pane-visual"
-                                style="background:linear-gradient(135deg, rgba(0,200,150,0.2), transparent);">
-                                <div style="font-size: 4rem;opacity:0.8;">🌱</div>
-                            </div>
+                    <!-- ESG UniVerse -->
+                    <div class="product-crate" data-product="esg">
+                        <div class="crate-lid">
+                            <h3><span class="text-gradient">ESG UniVerse</span></h3>
+                            <span class="lock-icon">🔒</span>
+                            <p class="teaser-text">Sustainability data platform</p>
+                            <span class="unlock-hint"><i>Click to pry open</i></span>
+                        </div>
+                        <div class="crate-contents">
+                            <h3><span class="text-gradient">ESG UniVerse</span></h3>
+                            <p class="full-desc">Empowers organizations to navigate ESG disclosures, GHG accounting, and
+                                value chain assessment.</p>
+                            <ul class="feature-checklist">
+                                <li><span>✓</span> GHG emissions tracking and hotspots</li>
+                                <li><span>✓</span> Multi-framework reporting</li>
+                                <li><span>✓</span> Supplier value chain integration</li>
+                            </ul>
+                            <a href="#contact" class="btn-learn-more">Learn More &rarr;</a>
                         </div>
                     </div>
                 </div>
@@ -444,41 +603,60 @@
                     <p class="section-subtitle" style="margin: 0 auto 4rem auto;">Hear from the industry leaders we
                         empower globally.</p>
                 </div>
-                <div class="testimonials-grid"
-                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-                    <div class="testimonial-card"
-                        style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 20px; padding: 2rem; position: relative;">
-                        <span
-                            style="font-size: 3rem; color: var(--color-primary-light); position: absolute; top: 10px; right: 20px; opacity: 0.2;">"</span>
-                        <p
-                            style="color: var(--color-text-secondary); font-style: italic; margin-bottom: 1.5rem; line-height: 1.6;">
-                            "Partnering with Uniqus on the HDFC Bank – HDFC merger journey has been outstanding... They
-                            have not just been responsive but have often anticipated our needs like a true partner."</p>
-                        <h4 style="color: white; font-size: 1.1rem;">HDFC Bank</h4>
-                        <span style="color: var(--color-primary-light); font-size: 0.9rem;">Merger Advisory
-                            Client</span>
+                <div class="testimonial-grid">
+                    <!-- Top Row (3) -->
+                    <div class="envelope-card">
+                        <div class="envelope-cover">
+                            <span class="envelope-icon">📩</span>
+                            <div class="envelope-sender"><span class="text-gradient">HDFC Bank</span></div>
+                            <span class="envelope-teaser"><i>"Partnering with Uniqus on the HDFC Bank
+                                    merger..."</i></span>
+                            <span class="envelope-hint">Click to Read</span>
+                        </div>
+                        <div class="envelope-letter">
+                            <p><i>"Partnering with Uniqus on the HDFC Bank – HDFC merger journey has been outstanding,
+                                    and we are thoroughly delighted with the outcomes. Uniqus has brought in the best
+                                    available talent to serve us on this large complex project. They have not just been
+                                    responsive but have often anticipated our needs like a true partner."</i></p>
+                            <h4><span class="text-gradient">HDFC Bank</span></h4>
+                            <span>Merger Advisory</span>
+                        </div>
                     </div>
-                    <div class="testimonial-card"
-                        style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 20px; padding: 2rem; position: relative;">
-                        <span
-                            style="font-size: 3rem; color: var(--color-primary-light); position: absolute; top: 10px; right: 20px; opacity: 0.2;">"</span>
-                        <p
-                            style="color: var(--color-text-secondary); font-style: italic; margin-bottom: 1.5rem; line-height: 1.6;">
-                            "We have developed a great partnership with the team as they have provided innovative
-                            platform solutions that allow us to... effectively manage our sustainability programs."</p>
-                        <h4 style="color: white; font-size: 1.1rem;">Darren Chastain</h4>
-                        <span style="color: var(--color-primary-light); font-size: 0.9rem;">Senior Manager, GAP</span>
+
+                    <div class="envelope-card">
+                        <div class="envelope-cover">
+                            <span class="envelope-icon">📩</span>
+                            <div class="envelope-sender"><span class="text-gradient">GAP</span></div>
+                            <span class="envelope-teaser"><i>"We have developed a great partnership with the
+                                    team..."</i></span>
+                            <span class="envelope-hint">Click to Read</span>
+                        </div>
+                        <div class="envelope-letter">
+                            <p><i>"We have developed a great partnership with the team as they have provided innovative
+                                    platform solutions that allow us to not only effectively manage several of our key
+                                    women's empowerment and sustainability programs but also provide us the insights to
+                                    ensure we accomplish our goals."</i></p>
+                            <h4><span class="text-gradient">Darren Chastain</span></h4>
+                            <span>SLCP Lead & Senior Manager, GAP</span>
+                        </div>
                     </div>
-                    <div class="testimonial-card"
-                        style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 20px; padding: 2rem; position: relative;">
-                        <span
-                            style="font-size: 3rem; color: var(--color-primary-light); position: absolute; top: 10px; right: 20px; opacity: 0.2;">"</span>
-                        <p
-                            style="color: var(--color-text-secondary); font-style: italic; margin-bottom: 1.5rem; line-height: 1.6;">
-                            "TaskUs has been incredibly impressed with Uniqus' support throughout our ESG report
-                            publication process... making the entire experience efficient and effective."</p>
-                        <h4 style="color: white; font-size: 1.1rem;">TaskUs</h4>
-                        <span style="color: var(--color-primary-light); font-size: 0.9rem;">ESG Reporting Client</span>
+
+                    <div class="envelope-card">
+                        <div class="envelope-cover">
+                            <span class="envelope-icon">📩</span>
+                            <div class="envelope-sender"><span class="text-gradient">TaskUs</span></div>
+                            <span class="envelope-teaser"><i>"TaskUs has been incredibly impressed with Uniqus'
+                                    support..."</i></span>
+                            <span class="envelope-hint">Click to Read</span>
+                        </div>
+                        <div class="envelope-letter">
+                            <p><i>"TaskUs has been incredibly impressed with Uniqus' support throughout our ESG report
+                                    publication process. Uniqus provided end-to-end support and worked closely with our
+                                    teams. Their deep knowledge in ESG and report writing integrated smoothly with our
+                                    processes, making the entire experience efficient and effective."</i></p>
+                            <h4><span class="text-gradient">TaskUs</span></h4>
+                            <span>ESG Reporting</span>
+                        </div>
                     </div>
                 </div>
             </div>

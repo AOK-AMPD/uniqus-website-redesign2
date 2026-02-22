@@ -1,5 +1,21 @@
 // Uniqus Consultech - Interactions
 
+// Core Audio - Snap Sound
+window.playSnapSound = function () {
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
+    if (!AudioContext) return;
+    const ctx = new AudioContext();
+    const oscillator = ctx.createOscillator();
+    const gainNode = ctx.createGain();
+    oscillator.connect(gainNode);
+    gainNode.connect(ctx.destination);
+    oscillator.frequency.setValueAtTime(800, ctx.currentTime);
+    oscillator.frequency.exponentialRampToValueAtTime(400, ctx.currentTime + 0.05);
+    gainNode.gain.setValueAtTime(0.3, ctx.currentTime);
+    gainNode.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.1);
+    oscillator.start(ctx.currentTime);
+    oscillator.stop(ctx.currentTime + 0.1);
+};
 document.addEventListener('DOMContentLoaded', () => {
     // Navbar scroll effect
     const navbar = document.querySelector('.navbar');
@@ -17,35 +33,224 @@ document.addEventListener('DOMContentLoaded', () => {
         navbar.classList.add('scrolled');
     }
 
-    // Add mouse move effect to hero cards
-    const heroVisuals = document.querySelector('.hero-visuals');
-    const cards = document.querySelectorAll('.glass-card');
+    // Hero Lego Interaction
+    const heroBricks = document.querySelectorAll('.lego-brick-draggable');
+    const resetBtn = document.getElementById('hero-reset-btn');
+    const taglineEl = document.getElementById('typing-tagline');
+    const heroSubtitle = document.getElementById('hero-subtitle');
+    const heroCta = document.getElementById('hero-cta');
+    const heroInstruction = document.getElementById('hero-instruction');
+    const targetGrid = document.getElementById('lego-grid-target');
+    const scatterContainer = document.getElementById('hero-scatter-container');
 
-    if (heroVisuals) {
-        heroVisuals.addEventListener('mousemove', (e) => {
-            const rect = heroVisuals.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
+    let snappedCount = 0;
+    const TOTAL_BRICKS = 4;
+    const finalTagline = "Change the way consulting is done";
 
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
+    function scatterBricks() {
+        if (!scatterContainer) return;
+        const containerRect = scatterContainer.getBoundingClientRect();
 
-            const deltaX = (x - centerX) / centerX;
-            const deltaY = (y - centerY) / centerY;
+        // Scatter around the right side randomly
+        heroBricks.forEach(brick => {
+            brick.classList.remove('snapped', 'animate-snap');
 
-            cards.forEach((card, index) => {
-                const depth = (index + 1) * 10;
-                const moveX = deltaX * depth;
-                const moveY = deltaY * depth;
+            // Random bounds
+            const randX = Math.random() * (containerRect.width - 160);
+            const randY = Math.random() * (containerRect.height - 160);
+            const randRot = (Math.random() * 16) - 8; // -8 to +8 deg
 
-                // apply a gentle parralax
-                card.style.transform = `translate(${moveX}px, ${moveY}px)`;
+            brick.style.left = `${randX}px`;
+            brick.style.top = `${randY}px`;
+            brick.style.setProperty('--rot', `${randRot}deg`);
+            brick.style.transform = `rotate(${randRot}deg) scale(1)`;
+        });
+
+        snappedCount = 0;
+        if (resetBtn) resetBtn.classList.remove('visible');
+        if (taglineEl) taglineEl.innerHTML = '<span class="tagline-hidden">-----------------</span>';
+        if (heroSubtitle) heroSubtitle.classList.add('tagline-hidden');
+        if (heroCta) heroCta.classList.add('tagline-hidden');
+        if (heroInstruction) heroInstruction.style.opacity = '1';
+        if (targetGrid) targetGrid.classList.remove('pulsing');
+    }
+
+    function typeTagline() {
+        if (!taglineEl) return;
+        taglineEl.innerHTML = '<span class="text-gradient typing-text-cursor"></span>';
+        const span = taglineEl.querySelector('span');
+        let i = 0;
+
+        function typeChar() {
+            if (i < finalTagline.length) {
+                span.textContent += finalTagline.charAt(i);
+                i++;
+                setTimeout(typeChar, 30); // 30ms per char
+            } else {
+                span.classList.remove('typing-text-cursor');
+                if (heroSubtitle) heroSubtitle.classList.remove('tagline-hidden');
+                if (heroCta) heroCta.classList.remove('tagline-hidden');
+            }
+        }
+        typeChar();
+    }
+
+    if (scatterContainer) {
+        // Initial scatter
+        scatterBricks();
+
+        heroBricks.forEach(brick => {
+            brick.addEventListener('click', function () {
+                if (this.classList.contains('snapped')) return;
+
+                const service = this.getAttribute('data-service');
+                const slot = document.querySelector(`.lego-slot[data-slot="${service}"]`);
+
+                if (slot) {
+                    const scatterRect = scatterContainer.getBoundingClientRect();
+                    const slotRect = slot.getBoundingClientRect();
+
+                    // target top and left relative to scatterContainer
+                    const targetLeft = slotRect.left - scatterRect.left;
+                    const targetTop = slotRect.top - scatterRect.top;
+
+                    // Animate snap
+                    this.classList.add('animate-snap');
+                    this.style.left = `${targetLeft}px`;
+                    this.style.top = `${targetTop}px`;
+                    this.style.transform = `rotate(0deg) scale(1)`;
+                    this.style.setProperty('--rot', `0deg`);
+                    this.classList.add('snapped');
+
+                    window.playSnapSound();
+
+                    // Shockwave effect
+                    const shockwave = document.createElement('div');
+                    shockwave.className = 'shockwave';
+                    shockwave.style.left = `${targetLeft + slotRect.width / 2}px`;
+                    shockwave.style.top = `${targetTop + slotRect.height / 2}px`;
+                    scatterContainer.appendChild(shockwave);
+                    setTimeout(() => shockwave.remove(), 300);
+
+                    snappedCount++;
+
+                    if (snappedCount === TOTAL_BRICKS) {
+                        setTimeout(() => {
+                            window.playSnapSound(); // Louder snap
+                            if (targetGrid) targetGrid.classList.add('pulsing');
+                            if (resetBtn) resetBtn.classList.add('visible');
+                            if (heroInstruction) heroInstruction.style.opacity = '0';
+
+                            // Type tagline
+                            typeTagline();
+                        }, 400);
+                    }
+                }
             });
         });
 
-        heroVisuals.addEventListener('mouseleave', () => {
-            cards.forEach(card => {
-                card.style.transform = '';
+        if (resetBtn) resetBtn.addEventListener('click', scatterBricks);
+    }
+
+    // Why Uniqus - Box Accordion Interaction
+    const whyBoxes = document.querySelectorAll('.why-box');
+    whyBoxes.forEach(box => {
+        box.addEventListener('click', function () {
+            if (this.classList.contains('active')) {
+                this.classList.remove('active'); // allow click to close
+                return;
+            }
+
+            whyBoxes.forEach(b => b.classList.remove('active')); // close siblings
+            this.classList.add('active'); // open current
+        });
+    });
+
+    // Base Plate Builder Interaction
+    const plateTabs = document.querySelectorAll('.plate-tab');
+    const plateContents = document.querySelectorAll('.plate-content');
+    const basePlateBoard = document.getElementById('base-plate-board');
+    const detailPanel = document.getElementById('brick-detail-panel');
+    const detailTitle = document.getElementById('detail-title');
+    const detailDesc = document.getElementById('detail-desc');
+
+    if (plateTabs.length > 0 && basePlateBoard) {
+        let isAnimating = false;
+
+        plateTabs.forEach(tab => {
+            tab.addEventListener('click', function () {
+                if (this.classList.contains('active') || isAnimating) return;
+                isAnimating = true;
+
+                // Play sound
+                if (window.playSnapSound) window.playSnapSound();
+
+                const targetPlateId = `plate-${this.getAttribute('data-plate')}`;
+                const currentActiveTab = document.querySelector('.plate-tab.active');
+                const currentActiveContent = document.querySelector('.plate-content.active');
+
+                // 1. Tab styles
+                if (currentActiveTab) currentActiveTab.classList.remove('active');
+                this.classList.add('active');
+
+                // Reset detail panel
+                if (detailTitle) detailTitle.textContent = "Select a brick";
+                if (detailDesc) detailDesc.textContent = "Click on any module above to learn more.";
+
+                // Clear selected bricks
+                document.querySelectorAll('.sub-service-brick.selected').forEach(b => b.classList.remove('selected'));
+
+                // 2. Animate out current bricks
+                if (currentActiveContent) {
+                    const oldBricks = currentActiveContent.querySelectorAll('.sub-service-brick');
+                    oldBricks.forEach(brick => {
+                        brick.classList.remove('animate-fly-in');
+                        brick.classList.add('anim-out');
+                    });
+
+                    // 3. Animate the board snapping down
+                    setTimeout(() => {
+                        basePlateBoard.classList.add('anim-out');
+                    }, 100);
+
+                    // 4. Swap content and fly new ones in
+                    setTimeout(() => {
+                        currentActiveContent.classList.remove('active');
+                        oldBricks.forEach(brick => brick.classList.remove('anim-out'));
+
+                        const newContent = document.getElementById(targetPlateId);
+                        if (newContent) newContent.classList.add('active');
+
+                        // Board pops back in
+                        basePlateBoard.classList.remove('anim-out');
+                        if (window.playSnapSound) window.playSnapSound();
+
+                        // Bricks fly in staggered
+                        if (newContent) {
+                            const newBricks = newContent.querySelectorAll('.sub-service-brick');
+                            newBricks.forEach(brick => {
+                                brick.classList.add('animate-fly-in');
+                            });
+                        }
+
+                        setTimeout(() => { isAnimating = false; }, 800); // Wait for animations
+                    }, 400);
+
+                }
+            });
+        });
+
+        // Brick click to view details
+        document.querySelectorAll('.sub-service-brick').forEach(brick => {
+            brick.addEventListener('click', function () {
+                // Remove selected from all
+                document.querySelectorAll('.sub-service-brick.selected').forEach(b => b.classList.remove('selected'));
+                this.classList.add('selected');
+
+                if (window.playSnapSound) window.playSnapSound();
+
+                if (detailTitle) detailTitle.textContent = this.getAttribute('data-title');
+                if (detailDesc) detailDesc.textContent = this.getAttribute('data-desc');
             });
         });
     }
@@ -99,25 +304,64 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         ];
 
-        world.htmlElementsData(markerData)
-            .htmlElement(d => {
-                const el = document.createElement('div');
-                const officesHtml = d.offices.map(o => `<div style="padding: 4px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">${o}</div>`).join('');
-                el.innerHTML = `
-                    <div class="globe-marker" style="text-align: center; cursor: pointer; position: relative; pointer-events: auto;" onmouseenter="this.querySelector('.tooltip').style.opacity=1; this.querySelector('.tooltip').style.transform='translateY(0)';" onmouseleave="this.querySelector('.tooltip').style.opacity=0; this.querySelector('.tooltip').style.transform='translateY(10px)';">
-                        <div style="font-size: 24px; animation: pulse 2s infinite;">📍</div>
-                        <div style="color: white; font-weight: bold; font-family: Outfit, sans-serif; text-shadow: 0 2px 4px rgba(0,0,0,0.8); background: rgba(0,0,0,0.5); padding: 2px 6px; border-radius: 4px; border: 1px solid rgba(138,43,226,0.3); margin-top: 5px;">
-                            ${d.label}
-                        </div>
-                        <div class="tooltip" style="position: absolute; bottom: 100%; left: 50%; margin-left: -200px; width: 400px; background: rgba(10,10,15,0.95); border: 1px solid rgba(138,43,226,0.4); border-radius: 8px; padding: 15px; color: rgba(255,255,255,0.8); font-size: 0.8rem; text-align: left; opacity: 0; transform: translateY(10px); transition: all 0.3s ease; pointer-events: none; margin-bottom: 10px; z-index: 100;">
-                            <div style="font-weight: bold; font-size: 1rem; margin-bottom: 8px; color: var(--color-primary-light); border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 5px;">${d.label} Offices</div>
-                            ${officesHtml}
-                        </div>
-                    </div>
-                `;
-                el.style.transform = 'translate(-50%, -50%)';
-                return el;
-            });
+        // Initial empty state
+        world.htmlElementsData([]);
+
+        // Intersection Observer for dropping pins
+        const globeSection = document.getElementById('global-presence');
+        if (globeSection) {
+            const globeObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Drop the pins with a slight delay
+                        setTimeout(() => {
+                            world.htmlElementsData(markerData)
+                                .htmlElement(d => {
+                                    const el = document.createElement('div');
+                                    const officesHtml = d.offices.map(o => `<div style="padding: 4px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">${o}</div>`).join('');
+                                    const animDelay = (markerData.indexOf(d) * 0.15) + 's';
+                                    el.innerHTML = `
+                                        <div class="globe-marker-container group" style="position: relative; cursor: pointer;">
+                                            <!-- The Pin -->
+                                            <div class="globe-pin globe-pin-animated" style="width: 14px; height: 14px; background: var(--color-primary-light); border-radius: 50%; box-shadow: 0 0 15px var(--color-primary); border: 2px solid white; transition: transform 0.3s; pointer-events: auto; opacity: 0; animation-delay: ${animDelay};"></div>
+                                            <!-- Pulse effect -->
+                                            <div class="globe-pulse" style="position: absolute; top: -5px; left: -5px; right: -5px; bottom: -5px; border-radius: 50%; border: 1px solid var(--color-primary); animation: pulse 2s infinite; pointer-events: none; opacity: 0; animation-delay: ${animDelay}; transition: opacity 0.5s;"></div>
+                                            
+                                            <!-- Hover Card -->
+                                            <div class="globe-hover-card absolute bottom-full left-1/2 -translate-x-1/2 mb-4 w-64 opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 pointer-events-none group-hover:pointer-events-auto" style="
+                                                background: rgba(15, 15, 25, 0.95);
+                                                backdrop-filter: blur(10px);
+                                                border: 1px solid rgba(255,255,255,0.1);
+                                                border-radius: 12px;
+                                                padding: 1rem;
+                                                box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+                                                z-index: 100;
+                                                color: white;
+                                                transform-origin: bottom center;
+                                            ">
+                                                <h4 style="font-size: 1.1rem; color: var(--color-primary-light); margin-bottom: 0.5rem; text-align: left;">${d.label}</h4>
+                                                <div style="font-size: 0.85rem; color: #ccc; text-align: left; line-height: 1.4;">
+                                                    ${officesHtml}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    `;
+                                    // Fade in the pulse after pin drops
+                                    setTimeout(() => {
+                                        const pulse = el.querySelector('.globe-pulse');
+                                        if (pulse) pulse.style.opacity = '1';
+                                    }, 800 + (markerData.indexOf(d) * 150));
+
+                                    el.style.transform = 'translate(-50%, -50%)';
+                                    return el;
+                                });
+                        }, 200);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.4 });
+            globeObserver.observe(globeSection);
+        }
 
         // Auto-rotate
         world.controls().autoRotate = true;
@@ -128,61 +372,68 @@ document.addEventListener('DOMContentLoaded', () => {
         world.pointOfView({ lat: 20, lng: 40, altitude: 3.5 });
     }
 
-    // Products Interactive Tabs
-    const tabs = document.querySelectorAll('.product-tab');
-    const panes = document.querySelectorAll('.product-pane');
-    let productInterval;
+    // Products Crate Box Interaction
+    const productCrates = document.querySelectorAll('.product-crate');
+    productCrates.forEach(crate => {
+        const lid = crate.querySelector('.crate-lid');
+        if (!lid) return;
 
-    function switchTab(targetId) {
-        // Remove active class from all tabs and panes
-        tabs.forEach(t => t.classList.remove('active'));
-        panes.forEach(p => p.classList.remove('active'));
+        lid.addEventListener('click', function (e) {
+            if (crate.classList.contains('open')) return;
 
-        // Add active class to target
-        const targetTab = Array.from(tabs).find(t => t.dataset.product === targetId);
-        const targetPane = document.getElementById(`pane-${targetId}`);
-
-        if (targetTab && targetPane) {
-            targetTab.classList.add('active');
-            targetPane.classList.add('active');
-
-            // Handle timeline progress
-            const timelineProgress = document.getElementById('product-timeline-progress');
-            if (timelineProgress && targetTab) {
-                timelineProgress.style.height = `${targetTab.offsetHeight}px`;
-                timelineProgress.style.top = `${targetTab.offsetTop}px`;
+            // First, close any currently open crate
+            const currentlyOpen = document.querySelector('.product-crate.open');
+            if (currentlyOpen && currentlyOpen !== crate) {
+                currentlyOpen.classList.remove('open');
+                const openLid = currentlyOpen.querySelector('.crate-lid');
+                if (openLid) {
+                    openLid.classList.remove('pried-open');
+                }
+                // Play reset sound
+                if (window.playSnapSound) window.playSnapSound();
             }
-        }
-    }
 
-    function startAutoScroll() {
-        productInterval = setInterval(() => {
-            const currentActive = document.querySelector('.product-tab.active');
-            // the next sibling might be the timeline indicator divs, so look specifically for .product-tab
-            let nextTab = currentActive.nextElementSibling;
-            while (nextTab && !nextTab.classList.contains('product-tab')) {
-                nextTab = nextTab.nextElementSibling;
-            }
-            if (!nextTab) {
-                // Find first product-tab
-                nextTab = document.querySelector('.product-tab');
-            }
-            switchTab(nextTab.dataset.product);
-        }, 5000); // 5 seconds
-    }
+            // Shake animation
+            lid.classList.add('shake');
+            if (window.playSnapSound) window.playSnapSound();
 
-    if (tabs.length > 0) {
-        // Add click event listeners
-        tabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                clearInterval(productInterval); // Stop auto-scroll on manual click
-                switchTab(tab.dataset.product);
-            });
+            setTimeout(() => {
+                lid.classList.remove('shake');
+
+                // Pry open
+                lid.classList.add('pried-open');
+                crate.classList.add('open');
+
+                // Pop sound for opening
+                setTimeout(() => {
+                    if (window.playSnapSound) window.playSnapSound();
+                }, 100);
+
+            }, 450); // 3 * 150ms shake cycles
         });
+    });
 
-        // Start initial auto-scroll
-        startAutoScroll();
-    }
+    // Testimonial Envelope Interaction
+    const envelopes = document.querySelectorAll('.envelope-card');
+    envelopes.forEach(envelope => {
+        envelope.addEventListener('click', function () {
+            if (this.classList.contains('is-open')) {
+                this.classList.remove('is-open');
+                const hint = this.querySelector('.envelope-hint');
+                if (hint) hint.textContent = 'Click to Open';
+            } else {
+                envelopes.forEach(e => {
+                    e.classList.remove('is-open');
+                    const h = e.querySelector('.envelope-hint');
+                    if (h) h.textContent = 'Click to Open';
+                });
+
+                this.classList.add('is-open');
+                const hint = this.querySelector('.envelope-hint');
+                if (hint) hint.textContent = 'Click to Close';
+            }
+        });
+    });
 
     // Chatbot Logic
     // System instruction injected using the content.txt data
@@ -307,5 +558,67 @@ Always be polite, professional, and concise. Only answer questions related to Un
                 window.uniqusGlobe.globeImageUrl(newTheme === 'light' ? 'https://unpkg.com/three-globe/example/img/earth-blue-marble.jpg' : 'https://unpkg.com/three-globe/example/img/earth-dark.jpg');
             }
         });
+    }
+
+    // Stats Reveal on Scroll
+    const statCards = document.querySelectorAll('.lego-flip');
+
+    // Stats Lego Stack Reveal
+    const statBricks = document.querySelectorAll('.stat-brick');
+
+    // Easing function: easeOutQuart
+    const easeOutQuart = x => 1 - Math.pow(1 - x, 4);
+
+    const animateCountUp = (el, target) => {
+        const duration = 1000; // 1 second as requested
+        let startTime = null;
+
+        const countUpStep = (timestamp) => {
+            if (!startTime) startTime = timestamp;
+            const progress = timestamp - startTime;
+            const progressRatio = Math.min(progress / duration, 1);
+
+            const current = Math.floor(target * easeOutQuart(progressRatio));
+            el.innerText = current;
+
+            if (progressRatio < 1) {
+                window.requestAnimationFrame(countUpStep);
+            } else {
+                el.innerText = target;
+            }
+        };
+
+        window.requestAnimationFrame(countUpStep);
+    };
+
+    if (statBricks.length > 0) {
+        const statsObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const stack = document.getElementById('stats-lego-stack');
+                    if (stack) {
+                        statBricks.forEach(brick => {
+                            const delay = parseInt(brick.getAttribute('data-delay') || '0');
+                            brick.style.setProperty('--drop-delay', delay);
+
+                            setTimeout(() => {
+                                brick.classList.add('dropped');
+                                if (window.playSnapSound) window.playSnapSound();
+
+                                const countEl = brick.querySelector('.count-up');
+                                const targetVal = parseInt(brick.getAttribute('data-target') || '0');
+                                if (countEl) {
+                                    animateCountUp(countEl, targetVal);
+                                }
+                            }, delay);
+                        });
+                        observer.unobserve(entry.target);
+                    }
+                }
+            });
+        }, { threshold: 0.3 });
+
+        const statsSection = document.getElementById('stats');
+        if (statsSection) statsObserver.observe(statsSection);
     }
 });
