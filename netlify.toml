@@ -1,0 +1,3 @@
+[build]
+  base = "uniqus-website"
+  functions = "/.netlify/functions"
