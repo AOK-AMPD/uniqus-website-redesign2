@@ -185,8 +185,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Chatbot Logic
-    const GEMINI_API_KEY = 'AIzaSyBzPQQsmPMFeB0Kz43SZlQICc1-xaeyVeE'; // User can replace this with their API key
-
     // System instruction injected using the content.txt data
     const systemPrompt = `You are a helpful AI assistant for Uniqus Consultech, a global tech-enabled consulting company.
 Uniqus offers 4 main services:
@@ -248,31 +246,31 @@ Always be polite, professional, and concise. Only answer questions related to Un
             chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
 
             try {
-                if (GEMINI_API_KEY === 'ENTER_GEMINI_KEY_HERE') {
-                    throw new Error("API Key not configured. Please add your Gemini API Key in script.js.");
-                }
-
-                const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`, {
+                // Now calls YOUR Netlify function instead of Google directly
+                const response = await fetch("/.netlify/functions/ai", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({
-                        system_instruction: { parts: [{ text: systemPrompt }] },
-                        contents: chatHistory,
-                        generationConfig: { maxOutputTokens: 400 }
+                        chatHistory,
+                        systemPrompt
                     })
                 });
 
                 if (!response.ok) {
-                    throw new Error(`API Request failed: ${response.status}`);
+                    throw new Error(`Request failed: ${response.status}`);
                 }
 
                 const data = await response.json();
-                const aiResponseText = data.candidates ? data.candidates[0].content.parts[0].text : "Sorry, I encountered an error computing the response.";
+                const aiResponseText = data.candidates
+                    ? data.candidates[0].content.parts[0].text
+                    : "Sorry, I encountered an error computing the response.";
+
                 typingMsg.innerHTML = parseMarkdown(aiResponseText);
 
                 if (data.candidates) {
                     chatHistory.push({ role: "model", parts: [{ text: aiResponseText }] });
                 }
+
             } catch (error) {
                 typingMsg.textContent = error.message || "Apologies, I'm currently unable to connect to my knowledge base.";
             }
