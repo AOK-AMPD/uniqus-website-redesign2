@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uniqus Consultech | Change the way consulting is done</title>
+    <meta name="description"
+        content="Uniqus Consultech is a global tech-enabled consulting company serving global clients with ARC, GRC, SCC, and tech consulting.">
+    <!-- Google Fonts: Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Globe.gl -->
+    <script src="https://unpkg.com/globe.gl"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+                    <img src="https://uniqus.com/wp-content/uploads/2025/01/logo.png" style="width:100px;"
+                        alt="Uniqus Logo">
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="#services">Services</a>
+                <a href="#products">Products</a>
+                <a href="#founders">Founders</a>
+                <a href="#why-uniqus">Why Uniqus</a>
+                <a href="#global-presence">Global</a>
+                <a href="#stats">Impact</a>
+                <a href="#contact" class="btn btn-primary">Contact Us</a>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme"
+                    style="background:none; border:none; padding: 0 10px; font-size: 1.3rem; margin-left: 10px; cursor: pointer; transition: transform 0.2s;">🌞</button>
+            </div>
+            <div class="mobile-menu-btn">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero section-padding">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Change the way <span class="text-gradient">consulting</span> is done</h1>
+                    <p class="hero-subtitle">Bridging the rigor of Big 4 consulting with the agility of a global tech
+                        startup. We deliver tech-enabled solutions across national borders.</p>
+                    <div class="hero-cta">
+                        <a href="#services" class="btn btn-primary">Explore Services</a>
+                        <a href="#founders" class="btn btn-secondary">Learn Why</a>
+                    </div>
+                </div>
+                <div class="hero-visuals">
+                    <div class="glass-orb orb-1"></div>
+                    <div class="glass-orb orb-2"></div>
+                    <!-- Abstract UI cards representing their tech-forward approach -->
+                    <div class="glass-card card-arc">ARC</div>
+                    <div class="glass-card card-grc">GRC</div>
+                    <div class="glass-card card-scc">SCC</div>
+                    <div class="glass-card card-tech">TECH</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section id="stats" class="stats section-padding">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3 class="stat-number">80+</h3>
+                        <p class="stat-label">Partners & Directors</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 class="stat-number">700+</h3>
+                        <p class="stat-label">Global Professionals</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 class="stat-number">11</h3>
+                        <p class="stat-label">Global Offices</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 class="stat-number">400+</h3>
+                        <p class="stat-label">Clients Worldwide</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 class="stat-number" style="font-size: 2.5rem;">$250 Million</h3>
+                        <p class="stat-label">Valuation</p>
+                    </div>
+                </div>
+
+                <div class="clients-section">
+                    <p class="clients-heading">TRUSTED BY INDUSTRY LEADERS</p>
+                    <div class="clients-carousel">
+                        <img class="client-logo-img"
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/HDFC_Bank_Logo.svg/330px-HDFC_Bank_Logo.svg.png"
+                            alt="HDFC Bank" />
+                        <img class="client-logo-img"
+                            src="https://companieslogo.com/img/orig/RELIANCE.NS_BIG.D-b8088fff.png?t=1720244493"
+                            alt="Reliance" />
+                        <img class="client-logo-img"
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Al_Rajhi_Bank_Logo.svg/3840px-Al_Rajhi_Bank_Logo.svg.png"
+                            alt="Al Rajhi" />
+                        <img class="client-logo-img" src="https://cdn.worldvectorlogo.com/logos/flipkart.svg"
+                            alt="Flipkart" />
+                        <img class="client-logo-img"
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/General_Electric_logo.svg/3840px-General_Electric_logo.svg.png"
+                            alt="GE" />
+                        <img class="client-logo-img"
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/GAP_Logo.svg/500px-GAP_Logo.svg.png"
+                            alt="GAP" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section id="why-uniqus" class="why-us section-padding">
+            <div class="container flex-container">
+                <div class="why-content" style="max-width: 600px;">
+                    <h2 class="section-title" style="text-align: center;">Why <span class="text-gradient">Uniqus</span>
+                    </h2>
+
+                    <ul class="feature-list" style="margin-top: 2rem;">
+                        <li style="margin-bottom: 1.5rem;">
+                            <div class="feature-icon" style="font-size: 1.8rem;">🎯</div>
+                            <div class="feature-text">
+                                <h4
+                                    style="margin-bottom: 0.5rem; font-size: 1.2rem; color: var(--color-primary-light);">
+                                    Our Leadership & Deep Expertise</h4>
+                                <p style="font-size: 0.95rem; color: var(--color-text-secondary); line-height: 1.6;">Our
+                                    co-founders and 75+ global leaders bring 25+ years of experience from Big 4 firms to
+                                    guide your finance transformation.</p>
+                            </div>
+                        </li>
+                        <li style="margin-bottom: 1.5rem;">
+                            <div class="feature-icon" style="font-size: 1.8rem;">🌍</div>
+                            <div class="feature-text">
+                                <h4
+                                    style="margin-bottom: 0.5rem; font-size: 1.2rem; color: var(--color-primary-light);">
+                                    World-Class Talent, Globally Delivered</h4>
+                                <p style="font-size: 0.95rem; color: var(--color-text-secondary); line-height: 1.6;">Our
+                                    integrated talent pool draws from Big 4
+                                    accounting, finance transformation, risk, and technology practices across the USA,
+                                    India, and the Middle East — delivering premium expertise at the right price point.
+                                </p>
+                            </div>
+                        </li>
+                        <li style="margin-bottom: 1.5rem;">
+                            <div class="feature-icon" style="font-size: 1.8rem;">⚡</div>
+                            <div class="feature-text">
+                                <h4
+                                    style="margin-bottom: 0.5rem; font-size: 1.2rem; color: var(--color-primary-light);">
+                                    Agility & Responsiveness</h4>
+                                <p style="font-size: 0.95rem; color: var(--color-text-secondary); line-height: 1.6;">
+                                    Free from auditor independence requirements, we support clients without friction,
+                                    driven by high partner involvement.</p>
+                            </div>
+                        </li>
+                        <li style="margin-bottom: 1.5rem;">
+                            <div class="feature-icon" style="font-size: 1.8rem;">💻</div>
+                            <div class="feature-text">
+                                <h4
+                                    style="margin-bottom: 0.5rem; font-size: 1.2rem; color: var(--color-primary-light);">
+                                    Technology-led approach</h4>
+                                <p style="font-size: 0.95rem; color: var(--color-text-secondary); line-height: 1.6;">
+                                    We go beyond strategy. With proprietary tech products and partnerships with leading
+                                    platforms, we implement end-to-end
+                                    solutions that automate, integrate, and streamline your finance function from day
+                                    one.</p>
+                            </div>
+                        </li>
+                        <li style="margin-bottom: 1.5rem;">
+                            <div class="feature-icon" style="font-size: 1.8rem;">🤖</div>
+                            <div class="feature-text">
+                                <h4
+                                    style="margin-bottom: 0.5rem; font-size: 1.2rem; color: var(--color-primary-light);">
+                                    Our AI-led Platforms</h4>
+                                <p style="font-size: 0.95rem; color: var(--color-text-secondary); line-height: 1.6;">
+                                    Our AI platforms automate accounting research, extract authoritative literature,
+                                    perform complex calculations,
+                                    and produce audit-ready outputs — bringing consistency, control, and speed to your
+                                    most demanding workflows.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="why-visual">
+                    <div class="glass-card"
+                        style="width: 80%; height: 60%; display: flex; flex-direction: column; justify-content: center; align-items: center; background: rgba(255,255,255,0.05); gap: 1rem; position: relative;">
+                        <div style="font-size: 5rem;">📈</div>
+                        <div style="display: flex; gap: 10px;">
+                            <div
+                                style="width: 40px; height: 10px; background: var(--color-primary); border-radius: 5px;">
+                            </div>
+                            <div
+                                style="width: 60px; height: 10px; background: var(--color-secondary); border-radius: 5px;">
+                            </div>
+                            <div style="width: 30px; height: 10px; background: white; border-radius: 5px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Founders Section -->
+        <section id="founders" class="founders section-padding">
+            <div class="container text-center">
+                <div class="section-header">
+                    <h2 class="section-title" style="text-align: center;">The <span
+                            class="text-gradient">Visionaries</span> Behind Uniqus</h2>
+                    <p class="section-subtitle" style="margin: 0 auto 4rem auto;">Founded in 2022 by consulting veterans
+                        Jamil Khatri and Sandip Khetan to change the way consulting is done.</p>
+                </div>
+                <div class="founders-grid">
+                    <div class="founder-card">
+                        <div class="founder-avatar"
+                            style="background: url('https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png') center/cover;">
+                        </div>
+                        <h3>Jamil Khatri</h3>
+                        <p class="founder-title">
+                            Co-Founder & CEO
+                            <a href="https://linkedin.com/in/jamilkhatri" target="_blank"
+                                style="margin-left: 10px; color: #0077b5;"><svg xmlns="http://www.w3.org/2000/svg"
+                                    width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                    <path
+                                        d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
+                                </svg></a>
+                        </p>
+                        <p class="founder-bio">Former leader at KPMG, bringing decades of deep expertise to redefine
+                            global consulting paradigms and integrate the agility of modern technology.</p>
+                    </div>
+                    <div class="founder-card">
+                        <div class="founder-avatar"
+                            style="background: url('https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png') center/cover;">
+                        </div>
+                        <h3>Sandip Khetan</h3>
+                        <p class="founder-title">
+                            Co-Founder
+                            <a href="https://linkedin.com/in/sandip-khetan" target="_blank"
+                                style="margin-left: 10px; color: #0077b5;"><svg xmlns="http://www.w3.org/2000/svg"
+                                    width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                    <path
+                                        d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
+                                </svg></a>
+                        </p>
+                        <p class="founder-bio">Former EY leader, driving tech-enabled strategies to scale the next
+                            generation of advisory services across multi-national borders.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Global Presence Section -->
+        <section id="global-presence" class="global-presence"
+            style="position: relative; width: 100%; height: 1000px; display: flex; align-items: center; justify-content: center; overflow: hidden; background: var(--color-bg); transition: background 0.3s ease;">
+            <!-- Background Globe layer -->
+            <div id="globeViz" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+            </div>
+
+            <!-- Hovering Overlay Text -->
+            <div
+                style="position: absolute; top: 10%; left: 50%; transform: translateX(-50%); text-align: center; pointer-events: none; width: 90%;">
+                <h2 class="section-title" style="margin-bottom: 1rem; text-shadow: 0 4px 10px rgba(0,0,0,0.8);">Global
+                    <span class="text-gradient">Footprint</span>
+                </h2>
+                <p class="section-description"
+                    style="max-width: 600px; margin: 0 auto; color: rgba(255,255,255,0.8); text-shadow: 0 2px 5px rgba(0,0,0,0.8);">
+                    Hover over the pins to explore our 11 strategic locations across key global markets. Over 500
+                    professionals delivering cutting-edge consulting globally.</p>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="services section-padding">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title">Core <span class="text-gradient">Services</span></h2>
+                    <p class="section-subtitle" style="margin: 0 auto 4rem auto;">Comprehensive solutions tailored for
+                        modern business challenges.</p>
+                </div>
+
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">📊</div>
+                        <h3>ARC</h3>
+                        <p class="service-desc">Accounting & Reporting Consulting. Expert guidance on technical
+                            accounting, IPO advisory, finance transformation, and digitizing the finance function.</p>
+                        <a href="#contact" class="service-link">Learn more &rarr;</a>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🛡️</div>
+                        <h3>GRC</h3>
+                        <p class="service-desc">Governance, Risk & Compliance. Strengthening internal controls,
+                            enterprise risk management, SOX compliance, and deploying GRC automation platforms.</p>
+                        <a href="#contact" class="service-link">Learn more &rarr;</a>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🌱</div>
+                        <h3>SCC</h3>
+                        <p class="service-desc">Sustainability & Climate Consulting. ESG strategy & advisory, climate
+                            action planning, corporate sustainability reporting, and ESG diligence.</p>
+                        <a href="#contact" class="service-link">Learn more &rarr;</a>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">💻</div>
+                        <h3>Tech Consulting</h3>
+                        <p class="service-desc">Solving business problems holistically by integrating advanced AI
+                            knowledge, GenAI adoption management, and AI-driven GRC automation.</p>
+                        <a href="#contact" class="service-link">Learn more &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products" class="products section-padding" style="background:var(--color-bg);">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title">Our <span class="text-gradient">Products</span></h2>
+                    <p class="section-subtitle" style="margin: 0 auto 4rem auto;">Proprietary platforms augmenting our
+                        consulting capabilities.</p>
+                </div>
+
+                <div class="products-interactive-container">
+                    <div class="products-sidebar"
+                        style="position: relative; padding-left: 30px; display: flex; flex-direction: column; justify-content: space-between; padding-top: 1rem; padding-bottom: 1rem;">
+                        <!-- Vertical Timeline Bar spanning exact height of tabs -->
+                        <div
+                            style="position: absolute; left: 15px; top: 2.22rem; bottom: 2.38rem; width: 4px; background: rgba(255,255,255,0.05); border-radius: 2px;">
+                        </div>
+                        <!-- Vertical Progress Indicator -->
+                        <div id="product-timeline-progress"
+                            style="position: absolute; left: 15px; top: 2.22rem; height: calc((100% - 4.6rem) / 3); width: 4px; background: var(--gradient-brand); border-radius: 2px; transition: top 0.4s ease-in-out;">
+                        </div>
+
+                        <div class="product-tab active" data-product="uniquest" data-index="0"
+                            style="padding: 1.5rem 0; border: none; background: transparent;">
+                            <h3>UniQuest</h3>
+                        </div>
+                        <div class="product-tab" data-product="risk" data-index="1"
+                            style="padding: 1.5rem 0; border: none; background: transparent;">
+                            <h3>Risk UniVerse</h3>
+                        </div>
+                        <div class="product-tab" data-product="reporting" data-index="2"
+                            style="padding: 1.5rem 0; border: none; background: transparent;">
+                            <h3>Reporting UniVerse</h3>
+                        </div>
+                        <div class="product-tab" data-product="esg" data-index="3"
+                            style="padding: 1.5rem 0; border: none; background: transparent;">
+                            <h3>ESG UniVerse</h3>
+                        </div>
+                    </div>
+
+                    <div class="products-display">
+                        <div class="product-pane active" id="pane-uniquest" style="padding: 0.5rem 0.5rem">
+                            <div class="pane-content">
+                                <h3>Web-based AI-powered research</h3>
+                                <p>Designed to revolutionize how finance and sustainability executives perform research
+                                    and manage knowledge on ESG and financial reporting matters acting as a co-pilot.
+                                </p>
+                                <ul style="margin-top:1rem;color:var(--color-text-secondary);line-height:1.8;">
+                                    <li>✓ NLP-based smart insights and reference validations</li>
+                                    <li>✓ Query complex documents to create concise synopses</li>
+                                    <li>✓ Facilitates competitive intelligence via SEC filings</li>
+                                </ul>
+                            </div>
+                            <div class="pane-visual"
+                                style="background:linear-gradient(135deg, rgba(88,16,160,0.2), transparent);">
+                                <div style="font-size: 4rem;opacity:0.8;">🧠</div>
+                            </div>
+                        </div>
+
+                        <div class="product-pane" id="pane-risk" style="padding: 0.5rem 0.5rem">
+                            <div class="pane-content">
+                                <h3>Enterprise Financial Control</h3>
+                                <p>A proprietary platform designed specifically to streamline internal controls over
+                                    financial reporting, SOX compliance, and internal financial controls.</p>
+                                <ul style="margin-top:1rem;color:var(--color-text-secondary);line-height:1.8;">
+                                    <li>✓ Automated Controls Testing</li>
+                                    <li>✓ Real-time Risk Dashboards</li>
+                                    <li>✓ Data integrity and robust compliance</li>
+                                </ul>
+                            </div>
+                            <div class="pane-visual"
+                                style="background:linear-gradient(135deg, rgba(255,42,133,0.2), transparent);">
+                                <div style="font-size: 4rem;opacity:0.8;">🛡️</div>
+                            </div>
+                        </div>
+
+                        <div class="product-pane" id="pane-reporting" style="padding: 0.5rem 0.5rem">
+                            <div class="pane-content">
+                                <h3>Advanced Data Management</h3>
+                                <p>A cloud-based solution that automates the creation of Board-ready financial
+                                    statements and annual reports, streamlining the reporting process for global
+                                    enterprises.</p>
+                                <ul style="margin-top:1rem;color:var(--color-text-secondary);line-height:1.8;">
+                                    <li>✓ Automated Board-ready reports</li>
+                                    <li>✓ Single-source-of-truth accuracy</li>
+                                    <li>✓ Narrative Reporting Integration</li>
+                                </ul>
+                            </div>
+                            <div class="pane-visual"
+                                style="background:linear-gradient(135deg, rgba(138,43,226,0.2), transparent);">
+                                <div style="font-size: 4rem;opacity:0.8;">📊</div>
+                            </div>
+                        </div>
+
+                        <div class="product-pane" id="pane-esg" style="padding: 0.5rem 0.5rem">
+                            <div class="pane-content">
+                                <h3>Sustainability Measurement</h3>
+                                <p>A cloud-based solution empowering organizations to navigate their sustainability
+                                    journey, covering ESG disclosures, greenhouse gas accounting, and value chain
+                                    assessment.</p>
+                                <ul style="margin-top:1rem;color:var(--color-text-secondary);line-height:1.8;">
+                                    <li>✓ Carbon Footprint Tracking across Value Chain</li>
+                                    <li>✓ OCR and data automation tools</li>
+                                    <li>✓ Strategic sustainability alignment insights</li>
+                                </ul>
+                            </div>
+                            <div class="pane-visual"
+                                style="background:linear-gradient(135deg, rgba(0,200,150,0.2), transparent);">
+                                <div style="font-size: 4rem;opacity:0.8;">🌱</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="testimonials section-padding">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title">Client <span class="text-gradient">Testimonials</span></h2>
+                    <p class="section-subtitle" style="margin: 0 auto 4rem auto;">Hear from the industry leaders we
+                        empower globally.</p>
+                </div>
+                <div class="testimonials-grid"
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                    <div class="testimonial-card"
+                        style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 20px; padding: 2rem; position: relative;">
+                        <span
+                            style="font-size: 3rem; color: var(--color-primary-light); position: absolute; top: 10px; right: 20px; opacity: 0.2;">"</span>
+                        <p
+                            style="color: var(--color-text-secondary); font-style: italic; margin-bottom: 1.5rem; line-height: 1.6;">
+                            "Partnering with Uniqus on the HDFC Bank – HDFC merger journey has been outstanding... They
+                            have not just been responsive but have often anticipated our needs like a true partner."</p>
+                        <h4 style="color: white; font-size: 1.1rem;">HDFC Bank</h4>
+                        <span style="color: var(--color-primary-light); font-size: 0.9rem;">Merger Advisory
+                            Client</span>
+                    </div>
+                    <div class="testimonial-card"
+                        style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 20px; padding: 2rem; position: relative;">
+                        <span
+                            style="font-size: 3rem; color: var(--color-primary-light); position: absolute; top: 10px; right: 20px; opacity: 0.2;">"</span>
+                        <p
+                            style="color: var(--color-text-secondary); font-style: italic; margin-bottom: 1.5rem; line-height: 1.6;">
+                            "We have developed a great partnership with the team as they have provided innovative
+                            platform solutions that allow us to... effectively manage our sustainability programs."</p>
+                        <h4 style="color: white; font-size: 1.1rem;">Darren Chastain</h4>
+                        <span style="color: var(--color-primary-light); font-size: 0.9rem;">Senior Manager, GAP</span>
+                    </div>
+                    <div class="testimonial-card"
+                        style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 20px; padding: 2rem; position: relative;">
+                        <span
+                            style="font-size: 3rem; color: var(--color-primary-light); position: absolute; top: 10px; right: 20px; opacity: 0.2;">"</span>
+                        <p
+                            style="color: var(--color-text-secondary); font-style: italic; margin-bottom: 1.5rem; line-height: 1.6;">
+                            "TaskUs has been incredibly impressed with Uniqus' support throughout our ESG report
+                            publication process... making the entire experience efficient and effective."</p>
+                        <h4 style="color: white; font-size: 1.1rem;">TaskUs</h4>
+                        <span style="color: var(--color-primary-light); font-size: 0.9rem;">ESG Reporting Client</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Us Section -->
+        <section id="contact" class="contact-section section-padding">
+            <div class="container text-center">
+                <div class="section-header text-center">
+                    <h2 class="section-title">Get in <span class="text-gradient">Touch</span></h2>
+                    <p class="section-subtitle" style="margin: 0 auto 4rem auto;">Reach out to learn how Uniqus can
+                        accelerate your business.</p>
+                </div>
+
+                <div class="contact-form-container">
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required placeholder="John Doe">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required placeholder="john@company.com">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000">
+                            </div>
+                            <div class="form-group">
+                                <label for="location">Location</label>
+                                <input type="text" id="location" name="location" placeholder="City, Country">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="requestType">Type of Request</label>
+                            <select id="requestType" name="requestType" required>
+                                <option value="" disabled selected>Select an option</option>
+                                <option value="meeting">Schedule a Meeting</option>
+                                <option value="inquiry">Business Inquiries</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="4" required
+                                placeholder="How can we help you?"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary submit-btn">Submit Request</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-text">Uniqus</span>
+                    <p>Change the way consulting is done.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <a href="#about">About</a>
+                        <a href="#founders">Founders</a>
+                        <a href="#why-uniqus">Why Uniqus</a>
+                        <a href="#global-presence">Global Presence</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Services</h4>
+                        <a href="#services">ARC</a>
+                        <a href="#services">GRC</a>
+                        <a href="#services">SCC</a>
+                        <a href="#services">Tech Consulting</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Uniqus Consultech. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chatbot Widget -->
+    <div id="chatbot-widget" class="chatbot-widget">
+        <div class="chatbot-window hidden" id="chatbot-window">
+            <div class="chatbot-header">
+                <h3>Uniqus AI Assistant</h3>
+                <button id="chatbot-close">✖</button>
+            </div>
+            <div class="chatbot-messages" id="chatbot-messages">
+                <div class="chat-msg ai-msg">Hello! How can I help you learn more about Uniqus today?</div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="chatbot-input-field" placeholder="Ask a question...">
+                <button id="chatbot-send">Send</button>
+            </div>
+        </div>
+        <button class="chatbot-toggle" id="chatbot-toggle" title="Chat with Uniqus AI">
+            💬
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

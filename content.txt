@@ -1,0 +1,168 @@
+This is a text document that contains info from the main uniqus website.
+I want you to use this info to include it in the website we are making.
+You may shorten this info if you feel it to be necessary and only include parts of it if you think some parts are not required.
+This is also a summmary from claude. 
+
+1. ARC — Accounting & Reporting Consulting
+Uniqus' ARC practice is designed to partner with the finance function through its challenges. Their teams act as an extension of your finance teams to execute your plans seamlessly, bringing the necessary technical expertise, skills, technology, and bandwidth, enabling you to navigate your plans in real time without adding additional manpower costs within the organization. Tracxn
+The ARC practice draws from a global talent pool with expertise in both finance and technology, providing the necessary skills and resources to help you execute your plans in real-time, without increasing your manpower costs. LinkedIn
+Key ARC sub-services (from their LinkedIn):
+
+Technical Accounting Advisory
+IPO & Transaction Accounting Advisory
+Accounting Support & Finance Function Transformation
+Internal Control Over Financial Reporting (ICFR)
+Finance Function Digitization & Automation
+Audit Support & Financial Statement Preparation
+Stock Option Accounting & Regulatory/Tax Compliance
+
+Key differentiator: Free from auditor independence requirements, Uniqus can seamlessly support clients without the friction, delays, or restrictions caused by independence considerations. Their technology-driven approach empowers comprehensive end-to-end implementation assistance leveraging their proprietary technology products and strategic partnerships with leading tech platforms. Tracxn
+
+2. GRC — Governance, Risk & Compliance
+In an environment of growing regulatory demands and business complexities, Uniqus's GRC Consulting Services empower organizations to thrive by building and enhancing resilient, compliant, and risk-aware functions. They partner with clients to establish a culture of accountability and proactive risk management that is both comprehensive and sustainable. ZoomInfo
+The GRC practice partners with organizations as they continue to deal with the dynamic governance, risk, and compliance landscape and navigate today's complex business environment. They seek to prepare business leaders and their teams to identify and manage risks, strengthen governance across levels, ensure end-to-end compliance, design and test internal controls, anticipate and assess any disruptions, and help build business resilience. They help deploy platforms aimed at digitization and automation of an organization's GRC functions. Crunchbase
+GRC sub-services include:
+
+Enterprise Risk Management (ERM)
+SOX Compliance & Internal Controls
+Corporate Governance
+Organizational Resilience
+Compliance Advisory
+GRC Digitization & Automation (via Risk UniVerse)
+
+Key differentiator: Their technology-driven approach, proprietary Risk UniVerse product, and strategic partnerships with leading tech platforms make them adept at addressing challenges related to automation, data management, and integrity within the GRC function — allowing them to not only conceptualize effective solutions but also seamlessly integrate and implement them. Crunchbase
+
+3. SCC — Sustainability & Climate Consulting
+Uniqus' Sustainability & Climate Consulting practice provides end-to-end services in the areas of climate risk and adaptation, decarbonization, corporate sustainability, and ESG. Given the growing importance of disclosures, significant data integrity requirements, and varied and disaggregated data sources, enabling the sustainability journey through technology is essential. With a unique blend of strong sustainability and climate domain capabilities combined with technology expertise and proprietary assets, they are well-placed to assist organizations in achieving their long-term sustainability goals. Uniqus
+SCC sub-services include:
+
+ESG Strategy & Advisory
+Climate Action Planning & Decarbonization
+Corporate Sustainability Reporting (GRI, ISSB, CSRD, TCFD, BRSR)
+ESG Standards & Disclosures
+Sustainable Finance
+ESG Diligence for PE/VC funds
+ESG Training & Awareness Programs
+
+Their Sustainability/ESG Training and Awareness Program offers in-depth insights gained through consulting work, with a training pedagogy designed to enhance both theoretical understanding and practical implementation of ESG standards and frameworks such as GRI, ISSB, CSRD, and TCFD. Uniqus
+
+4. Tech Consulting
+The Tech Consulting practice focuses on solving business problems holistically by integrating deep domain knowledge in finance, risk, and sustainability with advanced technology knowledge. They harness the power of new technologies, believing that effective solutions come from combining human expertise with algorithms, data, and AI, while addressing security, privacy, and governance challenges. LinkedIn
+Tech Consulting sub-services and partner-enabled solutions:
+
+GenAI adoption management with enterprise-grade oversight, compliance reporting, and forensic visibility into AI usage LinkedIn
+End-to-end automation and compliance in lease accounting across ASC 842, IFRS 16, and GASB 87 LinkedIn
+AI-powered month-end close automation, reconciliation, and deep ERP integration LinkedIn
+AI-driven, data-powered GRC automation delivering real-time visibility and scalability for evolving compliance and risk environments LinkedIn
+Smarter financial operations by integrating spend management, procurement, and automated accounting LinkedIn
+
+Strategic tech partnerships: Numeric, Cranium AI, Portal 26, and Anecdotes X
+New in 2025: Uniqus launched its AI consulting practice — AI UniVerse — in August 2025. Business Wire
+
+🛠️ PRODUCTS — The Proprietary Technology Suite
+UniQuest
+UniQuest is a web-based AI-powered research product designed to revolutionize how finance and sustainability executives perform research and manage knowledge on ESG and financial reporting matters. It leverages cutting-edge technology and Uniqus' deep domain expertise to act as a co-pilot and enhance productivity and effectiveness of research and knowledge management by users. Uniqus
+Key capabilities:
+
+NLP-based search to receive contextual smart insights and reference validations Uniqus
+Upload large complex documents, query through them, and summarize into smart concise synopses for meetings or discussions Uniqus
+Facilitates competitive intelligence and risk assessment by revealing how peers and competitors address specific disclosures within their regulatory filings Uniqus
+Over 3,000 large PDF documents scanned and indexed for quick access to topics around Financial Reporting and ESG Uniqus
+
+Risk UniVerse
+A proprietary platform designed specifically to streamline internal controls over financial reporting, SOX compliance, and internal financial controls. Uniqus
+Reporting UniVerse
+A cloud-based solution that automates the creation of Board-ready financial statements and annual reports, streamlining the reporting process. Wix
+ESG UniVerse
+A cloud-based solution that empowers organizations to navigate their sustainability journey, covering ESG disclosures, greenhouse gas accounting, and value chain assessment. By combining strong sustainability expertise with innovative GenAI technology, ESG UniVerse streamlines data management, improves user experience, and aids organizations in reaching their long-term sustainability goals. Uniqus
+Capabilities include:
+
+Empowering businesses to identify emission hotspots, set reduction targets, and make strategic decisions aligned with sustainability goals Uniqus
+Use of technologies like OCR and data automation to facilitate seamless data input Uniqus
+Extend ESG insights across the value chain with modules for compiling and analyzing data from suppliers and customers Uniqus
+
+AI UniVerse (Newest — launched August 2025)
+Uniqus' AI consulting practice, launched in August 2025, focused on helping organizations manage GenAI adoption responsibly. Business Wire
+
+💬 CLIENT TESTIMONIALS (from their homepage)
+These are the testimonials Uniqus features publicly on their website:
+1. HDFC Bank (on the HDFC Bank – HDFC Merger)
+"Partnering with Uniqus on the HDFC Bank – HDFC merger journey has been outstanding, and we are thoroughly delighted with the outcomes. Uniqus has brought in the best available talent to serve us on this large complex project. They have not just been responsive but have often anticipated our needs like a true partner." Augment Code
+2. GAP (Darren Chastain, SLCP Lead and Senior Manager, Systems and Data Insight)
+"We have developed a great partnership with the team as they have provided innovative platform solutions that allow us to not only effectively manage several of our key women's empowerment and sustainability programs but also provide us the insights to ensure we accomplish our goals. Their willingness to fully comprehend our system needs, as well as their commitment and attentiveness have truly been appreciated." Augment Code
+3. TaskUs (on ESG Reporting)
+"TaskUs has been incredibly impressed with Uniqus' support throughout our ESG report publication process. Uniqus provided end-to-end support and worked closely with our teams, and we truly appreciated the expertise Uniqus brought to the table. Their deep knowledge in ESG and report writing integrated smoothly with our processes, making the entire experience efficient and effective." Augment Code
+4. On SOX/Internal Controls (unnamed NASDAQ-listed travel company)
+"The team at Uniqus exhibited the highest level of professionalism and attention to detail throughout the entire project and went above and beyond to provide valuable insights and guidance. Their commitment to open and transparent communication ensured a seamless and efficient collaboration." Augment Code
+5. On US GAAP & SOX (unnamed client)
+"We chose Uniqus for their strong experience and expertise in US GAAP technical accounting and SOX, and they have consistently delighted us with their solution-driven approach and commitment to delivering results within planned timelines." Augment Code
+
+🧠 THOUGHT LEADERSHIP
+Uniqus publishes thought leadership content under several categories on their Insights page:
+Publication Series:
+
+Early Impressions — Deep-dives on new accounting/reporting standards (e.g., IFRS 18, EU Omnibus Simplification Package for Sustainability Reporting)
+Uniqus Point of View — Opinion pieces on risk, shadow AI, operational risk (recently launched the Uniqus FRM Insights Series on financial risk management)
+Uniqus Insights — IPO readiness, ESG Corner newsletters, regulatory updates
+ASC Insights Series — Guides to Accounting Standards Codification
+
+Key Thought Leadership Topics:
+
+IFRS 18 — Presentation and Disclosure in Financial Statements Wikipedia
+The EU Omnibus Simplification Package proposing major updates to the CSRD and CSDDD Wikipedia
+Shadow AI risks — a report with Cranium AI examining compliance and security challenges and best practices for mitigating AI-related risks Wikipedia
+IPO Readiness insights, including quarterly IPO landscape updates covering DRHP filings and SEBI updates Wikipedia
+Monthly ESG Corner — spotlighting the most relevant global developments in sustainability, regulation, and responsible investing Wikipedia
+SAMA Vision 2030 and the future of Saudi Arabia's financial landscape
+India's Union Budget analysis and AI implications
+
+External Thought Leadership:
+
+Uniqus experts are regularly quoted in major outlets including Moneycontrol, Business Standard, Economic Times, and CXOToday
+Co-founder Jamil Khatri is on a path toward $100 million in revenue by 2026, having trebled revenue in 2024 PitchBook
+Khatri has stated that "60–70% of efforts that go into certain solutions can be AI-enabled," Canva signaling a strong AI-first philosophy in their public messaging
+
+OFFICES:
+
+🇺🇸 United States:
+
+San Jose — 100 Century Court, Suite 410, San Jose, California – 95112
+New York — 109 West 27th Street, Suite 4S, New York, New York – 10001
+
+🇦🇪 UAE:
+
+Dubai — Office Tower Level 17, Central Park Towers, DIFC, Dubai
+Abu Dhabi — 3009, 30th Floor, Tamouh Tower 12, Marina Square, Reem Island
+
+🇸🇦 Saudi Arabia:
+
+Riyadh — Office No. 2, 3rd Floor, North Tower, Abraj Attawuneya, King Fahad Branch Road
+
+🇮🇳 India:
+
+Mumbai — 703, 7th Floor, Peninsula Tower Wing A, Peninsula Corporate Park, Ganpat Rao Kadam Marg, Lower Parel – 400013
+Gurugram — 15th Floor, Building 9A, DLF Cyber City, DLF Phase 3, Sector 24, Gurugram, Haryana – 122002
+Bengaluru — 315 Work Avenue KRM 1, Tower II, #32, Hosur Main Road, Koramangala – 560034
+Chennai — Prestige Palladium Bayan, 8th Floor, Old No.12, New No. 43/1, Greams Road, Nungambakkam Division, Egmore – 600006
+Noida — Office 1632, 16th Floor, Max Tower, Plot No. C-001A, Sector 16B, DND Flyway, Noida, Uttar Pradesh – 201301
+Pune — Unit No. 302, Sprint Wakdewadi, Godrej Eternia, B-Wing, Old Mumbai-Pune Highway, Shivajinagar, Pune, Maharashtra – 411005
+
+WHY US
+
+**Our leadership & deep expertise**
+Jamil Khatri and Sandip Khetan, our co-founders, have played a pivotal role in shaping the ARC industry in India and globally. 
+They have more than 25 years of experience each, partnering with diverse businesses worldwide, on their accounting, reporting, 
+compliance, and finance function transformation journey. Jamil and Sandip are supported 
+by more than 75 leaders across the globe, substantially all of whom have been partners and leaders with Big 4 accounting firms.
+
+**Deep and diverse talent pool & globally integrated delivery model**
+Being a company specializing in ARC as a core solution, we are a hotbed for high-quality talent in this area. Our leaders bring substantial experience from engagements relating to accounting advisory, audit, finance transformation, treasury, governance, risk, compliance, and technology practices of the Big 4 and other large consulting and technology companies globally. Due to our global organization structure, our talent pool is fully integrated, collaborating seamlessly across our key markets of the USA, India, and the Middle East. We leverage large ARC talent pools in lower cost economies to provide high-quality at the right price.
+
+**Agility & responsiveness**
+Our team embodies the essence of agility and responsiveness, fostering a dynamic environment where adaptability and quick responses are integral to our operations. Free from auditor independence requirements, we can seamlessly support our clients without the friction, delays, or restrictions caused by independence considerations. Our agility and responsiveness is enhanced by a high degree of partner/director involvement on projects.
+
+**Our technology-led approach**
+Our technology-driven approach empowers us to provide comprehensive end-to-end implementation assistance. Leveraging our deep functional experience, proprietary technology products and strategic partnerships with leading tech platforms, we are adept at addressing challenges related to automation data management, and integrity within the finance function. This allows us to not only conceptualize effective solutions but also seamlessly integrate and implement them, ensuring a holistic and streamlined approach to meet your organizational needs.
+
+**Our AI-led platforms**
+Our AI-enabled platforms automate accounting research, extract and interpret authoritative literature, perform table-based calculations, and generate audit-ready outputs through structured, template-driven workflows. Leveraging advanced automation, contextual AI drafting, and integrated data processing across contracts, reports, and supporting documents, we help organizations address challenges around automation, data management, consistency, and control.
