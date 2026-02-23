@@ -166,3 +166,65 @@ Our technology-driven approach empowers us to provide comprehensive end-to-end i
 
 **Our AI-led platforms**
 Our AI-enabled platforms automate accounting research, extract and interpret authoritative literature, perform table-based calculations, and generate audit-ready outputs through structured, template-driven workflows. Leveraging advanced automation, contextual AI drafting, and integrated data processing across contracts, reports, and supporting documents, we help organizations address challenges around automation, data management, consistency, and control.
+
+INFO FOR SERVICES.
+
+🔵 ARC — Accounting & Reporting Consulting
+The ARC practice is designed to partner with the finance function through its challenges, functioning as an extension of your finance teams to execute your plans seamlessly — bringing the necessary technical expertise, skills, technology, and bandwidth without adding manpower costs. Crunchbase
+1. Technical Accounting Advisory
+Expert guidance and tailored solutions to help you succeed with all financial reporting stakeholders — including executive leadership, board, regulatory bodies, auditors, and investors. Covers complex transactions such as revenue contracts, hedging, stock-based incentives, expected credit loss assessments, and business combinations. X
+2. IPO Readiness Services
+End-to-end IPO readiness support helping organizations prepare for capital markets, navigate SEBI regulations, and ensure financial reporting is audit-ready before listing. Canva
+3. Audit Support
+Assistance with financial statement preparation and regulatory filings, supporting organizations through the increasingly complex and challenging reporting environment. X
+4. Accounting Support
+A dedicated team of experienced accounting and reporting advisors serving as an independent extension of your team, providing comprehensive services to navigate the intricacies of modern financial reporting. Crunchbase
+5. Transaction Accounting Advisory
+Support for complex events like M&A activities, capital market transactions, and other transformational events that require advanced capabilities to manage transitions effectively. X
+6. Finance Transformation & Operations
+Helping organizations transform their finance functions with a focus on people, processes, and technology — addressing enhanced reporting requirements, tighter timelines, and the need for greater automation. X
+7. Financial Risk Management
+Advisory and implementation support for managing financial risks across the enterprise, including controls design, testing, and risk monitoring frameworks. Canva
+
+🟣 GRC — Governance, Risk & Compliance
+The GRC practice partners with organizations to navigate the dynamic governance, risk, and compliance landscape — preparing business leaders to identify and manage risks, strengthen governance, ensure end-to-end compliance, design and test internal controls, anticipate disruptions, and build business resilience. AND Academy
+1. Enterprise Risk Management (ERM)
+A comprehensive and systematic process applied strategically across the enterprise, designed to identify potential events that may affect the entity and measure and manage risks against its most critical objectives. Includes real-time risk visualization through customizable dashboards, risk prioritization models, and key risk indicator development aligned with business objectives. X
+2. Organizational Resilience Framework
+Refers to an organization's ability to anticipate, prepare for, respond to, and adapt to various disruptions or changes in its internal and external environment — ensuring continuity and sustainability while navigating uncertainties and crises. Antigravity-ide
+3. Internal Controls Design & Testing
+Assisting clients in designing best-in-class internal controls and management testing. Expertise spans diverse frameworks including Sarbanes Oxley in the US, ICOFR requirements in the Middle East, and Internal Financial Controls in India. Antigravity-ide
+4. Policies and Procedures
+Tailored solutions to enhance resilience, reinforce internal controls, and ensure compliance with evolving regulations — embedding accountability and risk-awareness across the organization. Unisco
+5. Compliance
+End-to-end compliance support helping organizations deploy platforms aimed at digitization and automation of GRC functions, enabling proactive regulatory adherence across jurisdictions. AND Academy
+
+🟢 SCC — Sustainability & Climate Consulting
+The SCC practice provides end-to-end services in the areas of climate risk and adaptation, decarbonization, corporate sustainability, and ESG. With a unique blend of strong sustainability and climate domain capabilities combined with technology expertise and proprietary assets, Uniqus is well-placed to assist organizations in achieving their long-term sustainability goals. Augment Code
+1. Climate Action
+Services involving the development and execution of climate change strategies, decarbonization roadmap, and biodiversity assessment. Covers responsible resource use for a more sustainable future while focusing on financial impact — including Greenhouse Gas Accounting (GHG Protocol), Financed Emissions, and Science-Based Target Setting (SBTi). Visual Studio Magazine
+2. Corporate Sustainability, Reporting & Ratings
+Corporate Sustainability and Responsibility encompasses initiatives and practices aimed at integrating environmental, social, and governance matters into a company's business strategy and stakeholder interactions — identifying sustainability topics, framing strategy, and defining metrics for stakeholder communications. Augment Code
+3. ESG Standards, Disclosures & Ratings
+Services helping companies embed sustainability and ethical business practices into their stakeholder communications. Covers ESG assessments, peer benchmarking, and reporting under global standards including CSRD, ISSB, GRI, California Climate Laws, BRSR, and the US SEC Climate Disclosure Rule. Vps-commander
+4. Sustainable Finance
+Focuses on aligning investments with ESG goals to drive long-term, responsible growth — enabling businesses to identify and manage internal and external ESG opportunities and risks, implement effective strategies, and embed these changes into core business operations to ensure compliance and enhance transparency. Stark Insider
+5. Partnering with PE & VC Funds
+ESG due diligence and advisory for private equity and venture capital funds looking to integrate sustainability criteria into investment decisions and portfolio management.
+6. Training & Awareness
+An ESG Training and Awareness Program emphasizing the critical importance of ESG and sustainability principles across industries. Training pedagogy designed to enhance both theoretical understanding and practical implementation of ESG standards and frameworks such as GRI, ISSB, CSRD, and TCFD — demystifying complex topics such as decarbonization and climate change. Gemini CLI
+7. Internal Control Frameworks & Assurance Readiness
+Designed to fortify an organization's governance and reporting processes amidst rising non-financial data (ESG) disclosure demands — ensuring assurance readiness for sustainability reporting. Augment Code
+
+⚡ Tech Consulting
+The Tech Consulting practice focuses on solving business problems holistically by integrating deep domain knowledge in finance, risk, and sustainability with advanced technology knowledge — harnessing the power of new technologies through a fusion of human expertise with algorithms, data, and AI, while being mindful of security, privacy, and governance challenges. Uniqus
+1. Technology & Cyber Risk
+Helping businesses stay ahead of cyber threats and compliance challenges. Expertise spans AI Risk & Governance ensuring responsible AI adoption, Risk & Compliance Automation for seamless regulatory adherence, Third-Party Risk Management to secure the vendor ecosystem, and Cyber in a Box — an all-in-one security solution. 99designs
+2. Data & Insights
+Enterprise Data Management solutions helping organizations establish robust governance frameworks and quality management practices aligned with global and regional standards such as NDMO, DAMA, GDPR, DPDP, and PDPL. Includes tailored data lifecycle maps, standardized taxonomies, and AI-driven profiling, cleansing, and validation for seamless self-service analytics and AI adoption. Uniqus
+3. Digitization & Automation
+Empowering businesses to transform operations by deploying cutting-edge digital platforms, automation tools, and workflow solutions — streamlining processes, minimizing manual intervention, and enhancing efficiency to enable organizations to operate more intelligently and adapt swiftly to evolving business demands. Uniqus
+4. Enterprise Application Modernization
+Guiding organizations in optimizing and modernizing legacy systems to align with current business needs, ensuring seamless integration and improving performance — embracing new technologies through a fusion of human expertise with algorithms, data, and AI. Uniqus
+5. AI UniVerse (Launched August 2025)
+A purpose-built, holistic AI ecosystem combining Uniqus' deep functional knowledge in finance, risk, and sustainability with technical expertise in AI. Delivers end-to-end AI transformation — starting with foundational readiness, through advanced data intelligence, to generative AI-powered knowledge discovery and agentic workflow automation. Helps clients assess AI environments, implement governance and compliance automation, and provide continuous oversight.

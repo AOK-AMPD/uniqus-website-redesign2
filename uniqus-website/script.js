@@ -17,6 +17,22 @@ window.playSnapSound = function () {
     oscillator.stop(ctx.currentTime + 0.1);
 };
 document.addEventListener('DOMContentLoaded', () => {
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    if (mobileMenuBtn && navLinks) {
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+    }
+
     // Navbar scroll effect
     const navbar = document.querySelector('.navbar');
 
@@ -134,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (window.playSnapSound) window.playSnapSound();
 
                 if (detailTitle) detailTitle.textContent = this.getAttribute('data-title');
-                if (detailDesc) detailDesc.textContent = this.getAttribute('data-desc');
+                if (detailDesc) detailDesc.textContent = this.getAttribute('data-ex-desc');
             });
         });
     }

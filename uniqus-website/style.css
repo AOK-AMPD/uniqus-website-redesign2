@@ -2047,6 +2047,26 @@ section {
 @media (max-width: 768px) {
     .nav-links {
         display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(10, 10, 15, 0.95);
+        padding: 1.5rem;
+        gap: 1.5rem;
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    [data-theme="light"] .nav-links {
+        background: rgba(255, 255, 255, 0.98);
+        border-top-color: rgba(0, 0, 0, 0.05);
     }
 
     .mobile-menu-btn {
