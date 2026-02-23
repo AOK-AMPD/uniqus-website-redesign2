@@ -33,124 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
         navbar.classList.add('scrolled');
     }
 
-    // Hero Lego Interaction
-    const heroBricks = document.querySelectorAll('.lego-brick-draggable');
-    const resetBtn = document.getElementById('hero-reset-btn');
-    const taglineEl = document.getElementById('typing-tagline');
-    const heroSubtitle = document.getElementById('hero-subtitle');
-    const heroCta = document.getElementById('hero-cta');
-    const heroInstruction = document.getElementById('hero-instruction');
-    const targetGrid = document.getElementById('lego-grid-target');
-    const scatterContainer = document.getElementById('hero-scatter-container');
+    // Hero Interaction is now CSS-driven (Floating Cards)
 
-    let snappedCount = 0;
-    const TOTAL_BRICKS = 4;
-    const finalTagline = "Change the way consulting is done";
-
-    function scatterBricks() {
-        if (!scatterContainer) return;
-        const containerRect = scatterContainer.getBoundingClientRect();
-
-        // Scatter around the right side randomly
-        heroBricks.forEach(brick => {
-            brick.classList.remove('snapped', 'animate-snap');
-
-            // Random bounds
-            const randX = Math.random() * (containerRect.width - 160);
-            const randY = Math.random() * (containerRect.height - 160);
-            const randRot = (Math.random() * 16) - 8; // -8 to +8 deg
-
-            brick.style.left = `${randX}px`;
-            brick.style.top = `${randY}px`;
-            brick.style.setProperty('--rot', `${randRot}deg`);
-            brick.style.transform = `rotate(${randRot}deg) scale(1)`;
-        });
-
-        snappedCount = 0;
-        if (resetBtn) resetBtn.classList.remove('visible');
-        if (taglineEl) taglineEl.innerHTML = '<span class="tagline-hidden">-----------------</span>';
-        if (heroSubtitle) heroSubtitle.classList.add('tagline-hidden');
-        if (heroCta) heroCta.classList.add('tagline-hidden');
-        if (heroInstruction) heroInstruction.style.opacity = '1';
-        if (targetGrid) targetGrid.classList.remove('pulsing');
-    }
-
-    function typeTagline() {
-        if (!taglineEl) return;
-        taglineEl.innerHTML = '<span class="text-gradient typing-text-cursor"></span>';
-        const span = taglineEl.querySelector('span');
-        let i = 0;
-
-        function typeChar() {
-            if (i < finalTagline.length) {
-                span.textContent += finalTagline.charAt(i);
-                i++;
-                setTimeout(typeChar, 30); // 30ms per char
-            } else {
-                span.classList.remove('typing-text-cursor');
-                if (heroSubtitle) heroSubtitle.classList.remove('tagline-hidden');
-                if (heroCta) heroCta.classList.remove('tagline-hidden');
-            }
-        }
-        typeChar();
-    }
-
-    if (scatterContainer) {
-        // Initial scatter
-        scatterBricks();
-
-        heroBricks.forEach(brick => {
-            brick.addEventListener('click', function () {
-                if (this.classList.contains('snapped')) return;
-
-                const service = this.getAttribute('data-service');
-                const slot = document.querySelector(`.lego-slot[data-slot="${service}"]`);
-
-                if (slot) {
-                    const scatterRect = scatterContainer.getBoundingClientRect();
-                    const slotRect = slot.getBoundingClientRect();
-
-                    // target top and left relative to scatterContainer
-                    const targetLeft = slotRect.left - scatterRect.left;
-                    const targetTop = slotRect.top - scatterRect.top;
-
-                    // Animate snap
-                    this.classList.add('animate-snap');
-                    this.style.left = `${targetLeft}px`;
-                    this.style.top = `${targetTop}px`;
-                    this.style.transform = `rotate(0deg) scale(1)`;
-                    this.style.setProperty('--rot', `0deg`);
-                    this.classList.add('snapped');
-
-                    window.playSnapSound();
-
-                    // Shockwave effect
-                    const shockwave = document.createElement('div');
-                    shockwave.className = 'shockwave';
-                    shockwave.style.left = `${targetLeft + slotRect.width / 2}px`;
-                    shockwave.style.top = `${targetTop + slotRect.height / 2}px`;
-                    scatterContainer.appendChild(shockwave);
-                    setTimeout(() => shockwave.remove(), 300);
-
-                    snappedCount++;
-
-                    if (snappedCount === TOTAL_BRICKS) {
-                        setTimeout(() => {
-                            window.playSnapSound(); // Louder snap
-                            if (targetGrid) targetGrid.classList.add('pulsing');
-                            if (resetBtn) resetBtn.classList.add('visible');
-                            if (heroInstruction) heroInstruction.style.opacity = '0';
-
-                            // Type tagline
-                            typeTagline();
-                        }, 400);
-                    }
-                }
-            });
-        });
-
-        if (resetBtn) resetBtn.addEventListener('click', scatterBricks);
-    }
 
     // Why Uniqus - Box Accordion Interaction
     const whyBoxes = document.querySelectorAll('.why-box');
@@ -267,6 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .showAtmosphere(true)
             .atmosphereColor('rgba(138, 43, 226, 0.4)')
             .atmosphereAltitude(0.2)
+            .backgroundColor('#070720')
             .globeImageUrl(initialGlobeUrl);
 
         window.uniqusGlobe = world;
@@ -321,24 +206,15 @@ document.addEventListener('DOMContentLoaded', () => {
                                     const officesHtml = d.offices.map(o => `<div style="padding: 4px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">${o}</div>`).join('');
                                     const animDelay = (markerData.indexOf(d) * 0.15) + 's';
                                     el.innerHTML = `
-                                        <div class="globe-marker-container group" style="position: relative; cursor: pointer;">
+                                        <div class="globe-marker-container" style="position: relative; cursor: pointer;">
                                             <!-- The Pin -->
                                             <div class="globe-pin globe-pin-animated" style="width: 14px; height: 14px; background: var(--color-primary-light); border-radius: 50%; box-shadow: 0 0 15px var(--color-primary); border: 2px solid white; transition: transform 0.3s; pointer-events: auto; opacity: 0; animation-delay: ${animDelay};"></div>
                                             <!-- Pulse effect -->
                                             <div class="globe-pulse" style="position: absolute; top: -5px; left: -5px; right: -5px; bottom: -5px; border-radius: 50%; border: 1px solid var(--color-primary); animation: pulse 2s infinite; pointer-events: none; opacity: 0; animation-delay: ${animDelay}; transition: opacity 0.5s;"></div>
                                             
-                                            <!-- Hover Card -->
-                                            <div class="globe-hover-card absolute bottom-full left-1/2 -translate-x-1/2 mb-4 w-64 opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 pointer-events-none group-hover:pointer-events-auto" style="
-                                                background: rgba(15, 15, 25, 0.95);
-                                                backdrop-filter: blur(10px);
-                                                border: 1px solid rgba(255,255,255,0.1);
-                                                border-radius: 12px;
-                                                padding: 1rem;
-                                                box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-                                                z-index: 100;
-                                                color: white;
-                                                transform-origin: bottom center;
-                                            ">
+                                            <!-- Click Card (hidden by default) -->
+                                            <div class="globe-hover-card">
+                                                <button class="globe-card-close" title="Close">&times;</button>
                                                 <h4 style="font-size: 1.1rem; color: var(--color-primary-light); margin-bottom: 0.5rem; text-align: left;">${d.label}</h4>
                                                 <div style="font-size: 0.85rem; color: #ccc; text-align: left; line-height: 1.4;">
                                                     ${officesHtml}
@@ -346,6 +222,26 @@ document.addEventListener('DOMContentLoaded', () => {
                                             </div>
                                         </div>
                                     `;
+                                    // Pin click to toggle card
+                                    const pin = el.querySelector('.globe-pin');
+                                    const card = el.querySelector('.globe-hover-card');
+                                    const closeBtn = el.querySelector('.globe-card-close');
+
+                                    pin.addEventListener('click', (e) => {
+                                        e.stopPropagation();
+                                        // Close all other open cards
+                                        document.querySelectorAll('.globe-hover-card.globe-card-visible').forEach(c => {
+                                            if (c !== card) c.classList.remove('globe-card-visible');
+                                        });
+                                        // Toggle this card
+                                        card.classList.toggle('globe-card-visible');
+                                    });
+
+                                    closeBtn.addEventListener('click', (e) => {
+                                        e.stopPropagation();
+                                        card.classList.remove('globe-card-visible');
+                                    });
+
                                     // Fade in the pulse after pin drops
                                     setTimeout(() => {
                                         const pulse = el.querySelector('.globe-pulse');
@@ -369,7 +265,7 @@ document.addEventListener('DOMContentLoaded', () => {
         world.controls().enableZoom = false;
 
         // Initial viewport focus
-        world.pointOfView({ lat: 20, lng: 40, altitude: 3.5 });
+        world.pointOfView({ lat: 20, lng: 40, altitude: 5 });
     }
 
     // Products Crate Box Interaction
@@ -389,27 +285,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (openLid) {
                     openLid.classList.remove('pried-open');
                 }
-                // Play reset sound
-                if (window.playSnapSound) window.playSnapSound();
+                // Restore lock icon
+                const oldLock = currentlyOpen.querySelector('.lock-icon');
+                if (oldLock) oldLock.textContent = '🔒';
             }
 
-            // Shake animation
-            lid.classList.add('shake');
+            // Smooth open — no shake
+            lid.classList.add('pried-open');
+            crate.classList.add('open');
+
+            // Swap lock icon to unlocked
+            const lockIcon = lid.querySelector('.lock-icon');
+            if (lockIcon) lockIcon.textContent = '🔓';
+
             if (window.playSnapSound) window.playSnapSound();
-
-            setTimeout(() => {
-                lid.classList.remove('shake');
-
-                // Pry open
-                lid.classList.add('pried-open');
-                crate.classList.add('open');
-
-                // Pop sound for opening
-                setTimeout(() => {
-                    if (window.playSnapSound) window.playSnapSound();
-                }, 100);
-
-            }, 450); // 3 * 150ms shake cycles
         });
     });
 

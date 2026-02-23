@@ -122,6 +122,72 @@
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
+/* Logo — invert in light mode */
+[data-theme="light"] .logo img {
+    filter: brightness(0) saturate(100%);
+}
+
+/* Nav links — dark hover in light mode */
+[data-theme="light"] .nav-links a:not(.btn) {
+    color: #5a5a6a;
+}
+
+[data-theme="light"] .nav-links a:not(.btn):hover {
+    color: #151520;
+}
+
+/* Mobile menu bars — dark in light mode */
+[data-theme="light"] .mobile-menu-btn .bar {
+    background-color: #151520;
+}
+
+/* Learn Why / secondary button — dark text in light mode */
+[data-theme="light"] .btn-secondary {
+    color: #151520;
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="light"] .btn-secondary:hover {
+    color: var(--color-primary-dark);
+    border-color: var(--color-primary);
+}
+
+/* Testimonial envelope letter text — dark in light mode */
+[data-theme="light"] .envelope-letter p {
+    color: #333;
+}
+
+[data-theme="light"] .envelope-letter h4 {
+    color: #151520;
+}
+
+/* Product learn-more hover — dark in light mode */
+[data-theme="light"] .crate-contents .btn-learn-more:hover {
+    color: var(--color-primary-dark);
+}
+
+/* Footer — dark text in light mode */
+[data-theme="light"] .footer {
+    background: #eaeaf2;
+    color: #151520;
+}
+
+[data-theme="light"] .footer a {
+    color: #5a5a6a;
+}
+
+[data-theme="light"] .footer a:hover {
+    color: var(--color-primary);
+}
+
+[data-theme="light"] .footer .logo-text {
+    color: #151520;
+}
+
+[data-theme="light"] .footer-bottom {
+    border-top-color: rgba(0, 0, 0, 0.1);
+}
+
 /* Reset & Base Styles */
 * {
     margin: 0;
@@ -1991,6 +2057,7 @@ section {
         font-size: 2.8rem;
     }
 }
+
 /* Core Services Lego Builder */
 .services-builder-container {
     max-width: 1000px;
@@ -2025,6 +2092,7 @@ section {
     border-color: var(--color-primary-light);
     box-shadow: 0 -5px 15px rgba(138, 43, 226, 0.2);
 }
+
 [data-theme="light"] .plate-tab.active {
     background: #ffffff;
     box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.05);
@@ -2038,7 +2106,7 @@ section {
     border-radius: 16px;
     border: 2px solid rgba(255, 255, 255, 0.05);
     /* Subtle stud grid */
-    background-image: repeating-radial-gradient(circle at center, rgba(255,255,255,0.03) 0, rgba(255,255,255,0.03) 4px, transparent 5px, transparent 20px);
+    background-image: repeating-radial-gradient(circle at center, rgba(255, 255, 255, 0.03) 0, rgba(255, 255, 255, 0.03) 4px, transparent 5px, transparent 20px);
     background-size: 20px 20px;
     padding: 40px;
     overflow: hidden;
@@ -2046,7 +2114,7 @@ section {
 }
 
 [data-theme="light"] .base-plate-board {
-    background-image: repeating-radial-gradient(circle at center, rgba(0,0,0,0.03) 0, rgba(0,0,0,0.03) 4px, transparent 5px, transparent 20px);
+    background-image: repeating-radial-gradient(circle at center, rgba(0, 0, 0, 0.03) 0, rgba(0, 0, 0, 0.03) 4px, transparent 5px, transparent 20px);
 }
 
 .base-plate-board.anim-out {
@@ -2089,7 +2157,10 @@ section {
 }
 
 @keyframes brickFlyIn {
-    to { transform: translateX(0); opacity: 1; }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 
 .sub-service-brick.anim-out {
@@ -2097,7 +2168,10 @@ section {
 }
 
 @keyframes brickLiftOff {
-    to { transform: translateY(-20px) scale(0.8); opacity: 0; }
+    to {
+        transform: translateY(-20px) scale(0.8);
+        opacity: 0;
+    }
 }
 
 .brick-studs {
@@ -2107,13 +2181,13 @@ section {
     right: 10px;
     height: 10px;
     /* studs on top edge */
-    background-image: repeating-radial-gradient(circle at center, rgba(255,255,255,0.15) 0, rgba(255,255,255,0.15) 3px, transparent 4px, transparent 15px);
+    background-image: repeating-radial-gradient(circle at center, rgba(255, 255, 255, 0.15) 0, rgba(255, 255, 255, 0.15) 3px, transparent 4px, transparent 15px);
     background-size: 15px 10px;
     background-position: center top;
 }
 
 [data-theme="light"] .brick-studs {
-    background-image: repeating-radial-gradient(circle at center, rgba(0,0,0,0.1) 0, rgba(0,0,0,0.1) 3px, transparent 4px, transparent 15px);
+    background-image: repeating-radial-gradient(circle at center, rgba(0, 0, 0, 0.1) 0, rgba(0, 0, 0, 0.1) 3px, transparent 4px, transparent 15px);
 }
 
 .sub-service-brick h5 {
@@ -2130,14 +2204,16 @@ section {
     margin: 0;
 }
 
-.sub-service-brick:hover, .sub-service-brick.selected {
+.sub-service-brick:hover,
+.sub-service-brick.selected {
     transform: translateY(-8px);
     box-shadow: 0 10px 20px rgba(138, 43, 226, 0.3);
     border-color: var(--color-primary-light);
     z-index: 10;
 }
+
 [data-theme="light"] .sub-service-brick:hover {
-     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .brick-detail-panel {
@@ -2179,28 +2255,54 @@ section {
     position: relative;
     width: 100%;
     border-radius: 12px;
-    margin-bottom: 5px; /* Slight gap normally, but we have a connecting ridge */
+    margin-bottom: 5px;
+    /* Slight gap normally, but we have a connecting ridge */
     transform: translateY(-100vh);
     opacity: 0;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3), inset 0 2px 5px rgba(255,255,255,0.2);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), inset 0 2px 5px rgba(255, 255, 255, 0.2);
     /* For z-index to work cleanly we can set it in JS or just let natural stacking occur if we design the ridge right */
 }
 
 /* Let's set z-index via nth-child so top is highest */
-.stat-brick:nth-child(1) { z-index: 5; }
-.stat-brick:nth-child(2) { z-index: 4; }
-.stat-brick:nth-child(3) { z-index: 3; }
-.stat-brick:nth-child(4) { z-index: 2; }
-.stat-brick:nth-child(5) { z-index: 1; }
+.stat-brick:nth-child(1) {
+    z-index: 5;
+}
+
+.stat-brick:nth-child(2) {
+    z-index: 4;
+}
+
+.stat-brick:nth-child(3) {
+    z-index: 3;
+}
+
+.stat-brick:nth-child(4) {
+    z-index: 2;
+}
+
+.stat-brick:nth-child(5) {
+    z-index: 1;
+}
 
 .stat-brick.dropped {
     animation: brickDropBounce 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
 }
 
 @keyframes brickDropBounce {
-    0% { transform: translateY(-150px); opacity: 0; }
-    70% { transform: translateY(10px); opacity: 1; }
-    100% { transform: translateY(0); opacity: 1; }
+    0% {
+        transform: translateY(-150px);
+        opacity: 0;
+    }
+
+    70% {
+        transform: translateY(10px);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 .stat-brick.type-a {
@@ -2222,12 +2324,12 @@ section {
     color: white;
     margin-bottom: 5px;
     line-height: 1;
-    text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .stat-content p {
     font-size: 1.1rem;
-    color: rgba(255,255,255,0.9);
+    color: rgba(255, 255, 255, 0.9);
     margin: 0;
     font-weight: 600;
     letter-spacing: 1px;
@@ -2242,11 +2344,13 @@ section {
     background: inherit;
     border-radius: 0 0 6px 6px;
     z-index: 1;
-    box-shadow: inset 0 -3px 5px rgba(0,0,0,0.2);
+    box-shadow: inset 0 -3px 5px rgba(0, 0, 0, 0.2);
 }
 
 /* Light mode overrides for contrast */
-[data-theme="light"] .stat-content h3 { color: white; }
+[data-theme="light"] .stat-content h3 {
+    color: white;
+}
 
 /* Products Crate Section */
 .products-crate-grid {
@@ -2266,7 +2370,7 @@ section {
     height: 380px;
     background: var(--color-surface);
     border-radius: 12px;
-    box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
     overflow: hidden;
     perspective: 1000px;
     transition: box-shadow 0.3s ease, border-color 0.3s ease;
@@ -2274,7 +2378,7 @@ section {
 }
 
 .product-crate.open {
-    box-shadow: 0 0 30px rgba(224, 64, 251, 0.4), inset 0 0 20px rgba(0,0,0,0.5);
+    box-shadow: 0 0 30px rgba(224, 64, 251, 0.4), inset 0 0 20px rgba(0, 0, 0, 0.5);
     border-color: var(--color-primary-light);
 }
 
@@ -2285,13 +2389,11 @@ section {
     width: 100%;
     height: 100%;
     /* Wood texture */
-    background: repeating-linear-gradient(
-        to bottom,
-        #2a2a3e 0px,
-        #2a2a3e 38px,
-        #1e1e2d 38px,
-        #1e1e2d 40px
-    );
+    background: repeating-linear-gradient(to bottom,
+            #2a2a3e 0px,
+            #2a2a3e 38px,
+            #1e1e2d 38px,
+            #1e1e2d 40px);
     border: 4px solid #1a1a2a;
     border-radius: 12px;
     display: flex;
@@ -2307,13 +2409,11 @@ section {
 }
 
 [data-theme="light"] .crate-lid {
-    background: repeating-linear-gradient(
-        to bottom,
-        #d1d1e0 0px,
-        #d1d1e0 38px,
-        #c0c0d0 38px,
-        #c0c0d0 40px
-    );
+    background: repeating-linear-gradient(to bottom,
+            #d1d1e0 0px,
+            #d1d1e0 38px,
+            #c0c0d0 38px,
+            #c0c0d0 40px);
     border: 4px solid #a0a0b0;
 }
 
@@ -2339,18 +2439,13 @@ section {
     opacity: 0.7;
 }
 
-.crate-lid.shake {
-    animation: crateShake 0.15s ease-in-out 3;
-}
-
-@keyframes crateShake {
-    0%, 100% { transform: translateX(0); }
-    25% { transform: translateX(-5px); }
-    75% { transform: translateX(5px); }
+.crate-lid:hover:not(.pried-open) {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(138, 43, 226, 0.2);
 }
 
 .crate-lid.pried-open {
-    transform: translateY(-60px) rotate(-5deg);
+    transform: perspective(800px) rotateX(-95deg);
     opacity: 0;
     pointer-events: none;
 }
@@ -2419,4 +2514,224 @@ section {
 
 .crate-contents .btn-learn-more:hover {
     color: white;
+}
+
+/* Floating Hero Cards Override */
+.floating-cards-container {
+    position: relative;
+    width: 100%;
+    height: 450px;
+}
+
+.floating-cards-container::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(138, 43, 226, 0.4) 0%, rgba(224, 64, 251, 0.2) 40%, transparent 70%);
+    filter: blur(50px);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.floating-card {
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    background: var(--color-surface);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 2px 10px rgba(255, 255, 255, 0.02);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: default;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    animation: floatCard 6s ease-in-out infinite;
+    animation-delay: var(--float-delay);
+}
+
+[data-theme="light"] .floating-card {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.floating-card:nth-child(1) {
+    top: 10%;
+    left: 10%;
+    z-index: 4;
+}
+
+.floating-card:nth-child(2) {
+    top: 20%;
+    right: 10%;
+    z-index: 3;
+}
+
+.floating-card:nth-child(3) {
+    bottom: 10%;
+    left: 25%;
+    z-index: 2;
+}
+
+.floating-card:nth-child(4) {
+    bottom: 15%;
+    right: 25%;
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+    .floating-cards-container {
+        height: 350px;
+    }
+
+    .floating-card {
+        width: 120px;
+        height: 120px;
+    }
+
+    .floating-card:nth-child(1) {
+        top: 5%;
+        left: 5%;
+    }
+
+    .floating-card:nth-child(2) {
+        top: 10%;
+        right: 5%;
+    }
+
+    .floating-card:nth-child(3) {
+        bottom: 5%;
+        left: 15%;
+    }
+
+    .floating-card:nth-child(4) {
+        bottom: 10%;
+        right: 15%;
+    }
+}
+
+@keyframes floatCard {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(3deg);
+    }
+
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+
+.card-front h3 {
+    font-size: 2rem;
+    color: var(--color-primary-light);
+    margin: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.card-hover-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.floating-card:hover .card-front h3 {
+    opacity: 0;
+    transform: scale(0.9);
+}
+
+.floating-card:hover .card-hover-text {
+    opacity: 1;
+}
+
+.floating-card:hover {
+    box-shadow: 0 15px 40px rgba(138, 43, 226, 0.4);
+    border-color: var(--color-primary-light);
+    z-index: 10;
+}
+
+/* Globe Location Card — Click-toggled */
+.globe-hover-card {
+    position: absolute;
+    bottom: calc(100% + 16px);
+    left: 50%;
+    transform: translateX(-50%) scale(0.95);
+    width: 260px;
+    opacity: 0;
+    pointer-events: none;
+    background: rgba(15, 15, 25, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    color: white;
+    transform-origin: bottom center;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.globe-hover-card.globe-card-visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) scale(1);
+}
+
+.globe-card-close {
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1.2rem;
+    cursor: pointer;
+    line-height: 1;
+    padding: 2px 6px;
+    border-radius: 4px;
+    transition: color 0.2s, background 0.2s;
+}
+
+.globe-card-close:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="light"] .globe-hover-card {
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: #151520;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="light"] .globe-hover-card h4 {
+    color: var(--color-primary) !important;
+}
+
+[data-theme="light"] .globe-hover-card div {
+    color: #444 !important;
+}
+
+[data-theme="light"] .globe-card-close {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="light"] .globe-card-close:hover {
+    color: #151520;
+    background: rgba(0, 0, 0, 0.05);
 }
